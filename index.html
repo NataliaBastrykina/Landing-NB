@@ -3,210 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Наталья Бастрыкина · Перестань жить на износ</title>
-  <meta name="description" content="Перестань жить на износ. Верни энергию, ясность и вкус к жизни. Первая консультация без риска.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Система устойчивости NB — Наталья Бастрыкина</title>
+  <meta name="description" content="Система устойчивости NB: как не сгореть, когда жизнь не даёт пауз. Структура, управление нагрузкой, эмоциями и делегированием. 7 диагностических вопросов — без прогревов.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' ry='12' fill='%23E6C6AF'/><text x='16' y='42' font-size='28' font-family='Arial' font-weight='700' fill='%232E2D2B'>NB</text></svg>">
   <style>
-    :root{
-      --bg:#F9F8F5; --ink:#2E2D2B; --muted:#5A5652;
-      --accent:#E6C6AF; --accent-dark:#D3AF97; --card:#FFFFFF; --line:rgba(0,0,0,.06);
-      --maxw:1080px;
-      --test-bg:#F4E7DF; --test-border:#E2C9BA; --ok:#388E3C;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
-    a{color:var(--ink);text-decoration:none}
-    img{max-width:100%;height:auto;display:block;border-radius:10px}
+    :root{--bg:#F9F8F5;--ink:#2E2D2B;--muted:#5A5652;--accent:#E6C6AF;--line:rgba(0,0,0,.08);--maxw:1120px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;line-height:1.6}
+    a{color:var(--ink);text-decoration:none} img{max-width:100%;display:block;border-radius:12px}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .section{padding:88px 0}
-    h1,h2{font-family:'Playfair Display',serif;line-height:1.2;margin:0 0 14px}
-    h1{font-size:clamp(30px,5.6vw,56px);font-weight:700}
-    h2{font-size:clamp(22px,3.6vw,36px);font-weight:600}
-    .sub{font-size:clamp(17px,2.3vw,20px);color:var(--muted);margin:8px 0 18px}
-    .btn{display:inline-block;padding:14px 22px;border:1px solid var(--ink);border-radius:12px;background:#fff;font-weight:600;transition:.18s ease}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.06)}
-    .btn.accent{background:var(--accent);border-color:var(--accent)}
-    .btn.accent:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
-    .btn-note{font-size:13px;color:var(--muted);margin-top:8px}
-    .grid{display:grid;gap:28px}
-    @media(min-width:980px){.two{grid-template-columns:1.1fr .9fr}.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:repeat(3,1fr)}}
-    nav{position:sticky;top:0;background:rgba(249,248,245,.85);backdrop-filter:saturate(140%) blur(6px);
-      border-bottom:1px solid var(--line);z-index:10}
-    nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
-    .brand{font-family:'Playfair Display',serif;font-weight:600}
-    .nav a{margin-left:18px;color:var(--muted);font-size:14px}
-    .hero{padding:96px 0 68px}
-    .pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted);font-size:12px;margin-bottom:10px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-    .quote{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);border-left:3px solid var(--accent);padding-left:14px;margin:0}
-    .center{text-align:center}
-    .footer{padding:64px 0 72px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-    .kicker{letter-spacing:.06em;text-transform:uppercase;font-size:12px;color:var(--muted)}
-    .hr{height:1px;background:var(--line);margin:30px 0}
-    .badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#6a6763;font-size:12px;margin-right:6px}
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);animation:up .6s .1s forwards}
-    @keyframes up{to{opacity:1;transform:none}}
-    @media (prefers-reduced-motion: reduce){.reveal{animation:none;opacity:1;transform:none}}
-    /* тест */
-    .test-wrap{background:var(--test-bg);border:1px solid var(--test-border);border-radius:16px;padding:28px}
-    .checklist{margin:16px 0 12px;padding:0;list-style:none;display:grid;gap:10px}
-    .check-item{display:flex;align-items:flex-start;gap:10px}
-    .box{width:18px;height:18px;border:2px solid var(--muted);border-radius:4px;position:relative;flex:0 0 18px;margin-top:2px}
-    .box::after{content:'';position:absolute;inset:0;transform:scale(0);background:conic-gradient(from 90deg,#fff 0 90deg, var(--ok) 0 360deg);clip-path:polygon(20% 55%, 42% 75%, 82% 25%, 90% 33%, 42% 88%, 12% 60%);transition:.18s ease}
-    .check-item:hover .box::after{transform:scale(1)}
+    .btn{display:inline-block;padding:14px 24px;border:1px solid var(--ink);border-radius:12px;background:#fff;font-weight:600;transition:.18s;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.06)}
+    .btn.acc{background:var(--accent);border-color:var(--accent)}
+    h1{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:0 0 14px}
+    h2{font-size:clamp(22px,3.2vw,34px);line-height:1.3;margin:0 0 10px}
+    p.lead{font-size:clamp(16px,2.4vw,19px);color:var(--muted);margin:0 0 20px}
+    nav{position:sticky;top:0;background:rgba(249,248,245,.9);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--line);z-index:10}
+    nav .bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .nb{display:inline-flex;align-items:center;justify-content:center;padding:2px 8px;border:1px solid #B8AFA4;border-radius:8px;color:#B8AFA4;font-weight:800;letter-spacing:.08em;font-size:12px}
+    .nav a{margin-left:16px;color:var(--muted);font-size:14px}
+    .hero{padding:110px 0 88px;display:flex;align-items:center;flex-wrap:wrap;gap:40px}
+    @media(min-width:980px){.hero img{flex:1 1 42%}.hero .text{flex:1 1 54%}}
+    .section{padding:96px 0;border-top:1px solid var(--line)}
+    .grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .muted{color:var(--muted)}
+    footer{padding:56px 0;border-top:1px solid var(--line);color:var(--muted)}
+    .footerbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .nb-badge{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;border:1px solid #B8AFA4;border-radius:10px;color:#B8AFA4;font-weight:800;letter-spacing:.08em;font-size:12px}
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="wrap">
-    <div class="brand">Наталья Бастрыкина</div>
+  <div class="wrap bar">
+    <div class="brand"><span class="nb">NB</span><span>Наталья Бастрыкина</span></div>
     <div class="nav">
       <a href="#about">Обо мне</a>
-      <a href="#why">Почему со мной</a>
-      <a href="#method">Как работаю</a>
-      <a href="#value">Результаты</a>
-      <a href="#test">Тест</a>
+      <a href="#method">Метод</a>
+      <a href="#clients">Кому подойдёт</a>
       <a href="#contact">Контакты</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap grid two" style="align-items:center">
-    <div class="reveal">
-      <div class="pill">Без шума · Без давления · По делу</div>
-      <h1>Перестань жить на износ. Верни энергию, ясность и вкус к жизни.</h1>
-      <p class="sub">Работаю с женщинами, у которых всё есть, кроме внутреннего покоя. Без мотивационных лозунгов — только структура, простые шаги и спокойный результат.</p>
-      <div style="margin:14px 0 12px;color:#6a6763">Первая консультация — без риска</div>
-      <a class="btn accent" href="https://t.me/nataliabastrykina" target="_blank" rel="noopener">Записаться в Telegram</a>
-      <div class="btn-note">Если не видите пользы — не оплачиваете</div>
-    </div>
-    <div class="reveal" style="animation-delay:.15s">
-      <img src="photo_hero.jpg" alt="Портрет — первый экран">
+<header class="wrap hero">
+  <div class="text">
+    <h1>Как не сгореть, когда жизнь не даёт пауз.</h1>
+    <p class="lead">Система устойчивости NB — структурный подход для женщин в постоянной ответственности: работа, дом, семья, решения. Без мотивации и «прогревов» — только рабочие шаги.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn acc" href="test.html">Пройти 7 диагностических вопросов</a>
+      <a class="btn" href="/course.html">Скачать мини-курс «3 шага к устойчивости»</a>
     </div>
   </div>
+  <img src="photo_hero.jpg" alt="Спокойный свет, реальная жизнь — первый экран">
 </header>
 
-<section class="section" id="why">
+<section id="about" class="section">
+  <div class="wrap grid" style="align-items:center">
+    <div>
+      <h2>Обо мне</h2>
+      <p>Я — Наталья Бастрыкина. Живу в том же ритме, что и мои клиентки: семья, работа, перелёты, собаки, ответственность. Знаю, как перегруз собирается из «надо» и «срочно» — и как вернуть управляемость.</p>
+      <p>Система NB — это профилактика выгорания: структура времени, управление эмоциями, делегирование без вины и короткие точки восстановления, которые помещаются в реальный день.</p>
+    </div>
+    <div><img src="photo_about.jpg" alt="Наталья — спокойный портрет"></div>
+  </div>
+</section>
+
+<section id="method" class="section" style="background:#fff">
   <div class="wrap">
-    <h2 class="reveal">Почему со мной просто и эффективно</h2>
-    <div class="grid cols-3 reveal" style="margin-top:18px">
-      <div class="card">Без мотивационного давления — только ясная структура и спокойный тон.</div>
-      <div class="card">Заметный эффект за 14 дней: меньше дел, больше времени и покоя.</div>
-      <div class="card">Первая встреча — без риска. Если не видите пользы — не оплачиваете.</div>
+    <h2>Метод NB: пять элементов устойчивости</h2>
+    <div class="grid" style="margin-top:8px">
+      <div><h3>Энергия</h3><p class="muted">Профилактика истощения — точки восстановления в течение дня.</p></div>
+      <div><h3>Время</h3><p class="muted">Структура, приоритеты и буферы — не жить в аврале.</p></div>
+      <div><h3>Эмоции</h3><p class="muted">Как не срываться и быстро возвращаться в норму.</p></div>
+      <div><h3>Делегирование</h3><p class="muted">Разгрузить себя без чувства вины.</p></div>
+      <div><h3>Равновесие</h3><p class="muted">Держать состояние без откатов.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="cost">
-  <div class="wrap grid cols-2">
-    <div class="card reveal">
-      <h2>Что стоит, если ничего не менять</h2>
-      <ul>
-        <li>Ещё одно утро с тревогой вместо ясности.</li>
-        <li>Ещё неделя «надо», когда всё под контролем, но нет сил.</li>
-        <li>Ещё месяц, когда энергия уходит на чужие ожидания.</li>
-      </ul>
-      <p class="quote" style="margin-top:8px">Иногда шаг к переменам дешевле, чем продолжать в том же ритме.</p>
-    </div>
-    <div class="reveal" style="animation-delay:.05s">
-      <img src="photo_detail1.jpg" alt="Деталь · свет · воздух">
-    </div>
-  </div>
-</section>
-
-<div class="hr wrap"></div>
-
-<section class="section" id="about">
-  <div class="wrap grid cols-2">
-    <div class="reveal">
-      <h2>Кто я</h2>
-      <p>Я не теоретик. Я женщина, которая сама перестала жить на износ: семья, работа, дом — и усталость, которую я научилась убирать системно.</p>
-      <p>Более 15 лет работаю с управленцами и специалистами: помогаю сохранять эффективность без выгорания.</p>
-      <p>Сейчас я помогаю тем, у кого внешне всё в порядке, вернуть энергию и спокойствие — без марафонов и коуч‑клише. Мы работаем по‑взрослому: спокойно, конкретно, конфиденциально.</p>
-      <div style="margin-top:10px">
-        <span class="badge">на равных</span>
-        <span class="badge">без шаблонов</span>
-        <span class="badge">частная практика</span>
-      </div>
-    </div>
-    <div class="card reveal" style="animation-delay:.1s"><img src="photo_about.jpg" alt="Обо мне — кадр в движении"></div>
-  </div>
-</section>
-
-<section class="section" id="method" style="background:#fff">
-  <div class="wrap grid cols-2">
-    <div class="reveal">
-      <h2>Как это проходит (3 шага)</h2>
-      <div class="kicker">метод + осязаемые результаты</div>
-      <ul>
-        <li><b>Диагностика (1 сессия).</b> Где утекает энергия и почему вы живёте в «надо». <i>На руки:</i> карта «утечки и триггеры» (1 стр.).</li>
-        <li><b>Структура (2 сессия).</b> Новый ритм: приоритеты, «стоп‑дела», границы. <i>На руки:</i> чек‑лист «минус 30% дел за 7 дней».</li>
-        <li><b>Действия (3 сессия).</b> 10‑минутные шаги, которые дают быстрый эффект. <i>На руки:</i> персональный план на 2 недели (1 стр.).</li>
-      </ul>
-      <p class="quote">Вы не покупаете встречи — вы покупаете свободу жить без надрыва.</p>
-    </div>
-    <div class="card reveal" style="animation-delay:.1s"><img src="photo_detail2.jpg" alt="Свет и пространство"></div>
-  </div>
-</section>
-
-<section class="section" id="value">
+<section id="clients" class="section" style="background:#F7F6F4">
   <div class="wrap">
-    <h2 class="reveal">Что изменится за 14 дней</h2>
-    <div class="grid cols-3 reveal" style="margin-top:18px">
-      <div class="card"><b>–30–40% дел</b> перестанут быть «надо» — без чувства вины.</div>
-      <div class="card"><b>+60–90 минут</b> спокойного времени ежедневно — для себя.</div>
-      <div class="card"><b>–20–30% тревоги</b> по утрам (по субъективной шкале).</div>
+    <h2>Кому подойдёт</h2>
+    <div class="grid" style="margin-top:8px">
+      <div><p class="muted">Тем, кто работает — и сил на семью не остаётся.</p></div>
+      <div><p class="muted">Тем, кто «просто дома», но делает всё — и устает не меньше.</p></div>
+      <div><p class="muted">Тем, кто не хочет лечить выгорание, а хочет не доводить до него.</p></div>
+      <div><p class="muted">Тем, кто хочет делегировать, планировать и восстанавливаться без вины.</p></div>
     </div>
-    <div class="grid cols-3 reveal" style="margin-top:18px;animation-delay:.05s">
-      <div class="card"><b>2–3 спокойных «нет»</b> без скандалов — дома и на работе.</div>
-      <div class="card"><b>Лучший сон</b>: засыпаете раньше на ~30 минут.</div>
-      <div class="card"><b>Возвращается вкус</b> — интерес к жизни и своим решениям.</div>
-    </div>
-    <div class="center reveal" style="margin-top:26px">
-      <a class="btn accent" href="https://t.me/nataliabastrykina" target="_blank" rel="noopener">Записаться на первую консультацию</a>
-      <div class="btn-note">Первая встреча — без риска. Если не видите пользы — не оплачиваете.</div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn acc" href="test.html">Пройти 7 вопросов</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="test">
-  <div class="wrap grid cols-2">
-    <div class="test-wrap reveal">
-      <h2 style="margin-bottom:8px">Мини‑тест: «Живу ли я на износ?»</h2>
-      <ul class="checklist">
-        <li class="check-item"><span class="box"></span><span>Просыпаюсь уставшей чаще, чем отдохнувшей.</span></li>
-        <li class="check-item"><span class="box"></span><span>Чувствую вину, если ничего не сделала.</span></li>
-        <li class="check-item"><span class="box"></span><span>Трудно сказать «нет» — дома и на работе.</span></li>
-        <li class="check-item"><span class="box"></span><span>День как список задач, а не моя жизнь.</span></li>
-        <li class="check-item"><span class="box"></span><span>Мне сложно вспомнить, что меня радует.</span></li>
-      </ul>
-      <p class="sub">Если «да» на 3 и более — пора возвращать себе ясность. Начните с разговора.</p>
-      <a class="btn accent" href="https://t.me/nataliabastrykina" target="_blank" rel="noopener">Написать в Telegram</a>
-    </div>
-    <div class="reveal" style="animation-delay:.05s">
-      <img src="photo_result.jpg" alt="Лёгкость как результат">
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact">
-  <div class="wrap center">
-    <h2 class="reveal">Начать можно с разговора</h2>
-    <p class="sub reveal" style="margin-top:4px">Если чувствуете, что время остановиться — напишите.</p>
-    <p class="reveal" style="animation-delay:.05s">
-      <a class="btn accent" href="https://t.me/nataliabastrykina" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn" href="https://wa.me/491607460565" target="_blank" rel="noopener" style="margin-left:8px">WhatsApp</a>
-      <a class="btn" href="mailto:nnataliabastrykin@hotmail.de" target="_blank" rel="noopener" style="margin-left:8px">Email</a>
+<section id="contact" class="section">
+  <div class="wrap" style="text-align:center">
+    <h2>Контакты</h2>
+    <p class="lead">Если чувствуешь, что пора выдохнуть — напиши. Спокойно, по делу, без давления.</p>
+    <p>
+      <a class="btn acc" target="_blank" rel="noopener" href="https://t.me/nataliabastrykina">Telegram</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://wa.me/491607460565" style="margin-left:8px">WhatsApp</a>
+      <a class="btn" target="_blank" rel="noopener" href="mailto:nnataliabastrykin@hotmail.de" style="margin-left:8px">Email</a>
     </p>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="wrap center">© Наталья Бастрыкина · Реальная работа, без шума</div>
+<footer>
+  <div class="wrap footerbar">
+    <div><span class="nb-badge">NB</span> Наталья Бастрыкина — Система устойчивости</div>
+    <div>© Все права сохранены</div>
+  </div>
 </footer>
 
 </body>
