@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Система устойчивости NB · 7 диагностических вопросов</title>
+<meta name="description" content="7 вопросов NB — чтобы понять, где перегружается твоя система: время, эмоции, делегирование, нагрузка. Без оценок и «прогревов».">
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' ry='12' fill='%23E6C6AF'/><text x='16' y='42' font-size='28' font-family='Arial' font-weight='700' fill='%232E2D2B'>NB</text></svg>">
+<style>
+:root{
+--bg:#F9F8F5; --ink:#2E2D2B; --muted:#5A5652;
+--accent:#E6C6AF; --accent-2:#B8AFA4; --line:rgba(0,0,0,.08);
+--maxw:860px;
+--pad:clamp(22px,5vw,40px);
+--s2:clamp(10px,2vw,14px);
+--s3:clamp(14px,2.8vw,18px);
+--s4:clamp(18px,3.6vw,24px);
+--s5:clamp(26px,4.6vw,36px);
+--s6:clamp(36px,6vw,56px);
+--radius:12px; --shadow:0 14px 30px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;background:var(--bg);color:var(--ink);
+font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:var(--ink);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.stack>*+*{margin-top:var(--s4)}
+.muted{color:var(--muted)}
+h1{margin:0;font-size:clamp(26px,5.2vw,40px);line-height:1.18;font-weight:750;letter-spacing:.01em}
+p.lead{margin:0;color:var(--muted);font-size:clamp(15px,2.2vw,18px);line-height:1.58;max-width:64ch}
+
+header{padding:var(--s6) 0 var(--s5)}
+.nb-badge{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;
+border:1px solid var(--accent-2);border-radius:10px;color:var(--accent-2);
+font-weight:800;letter-spacing:.08em;font-size:12px}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+padding:var(--s4);box-shadow:0 1px 1px rgba(0,0,0,.02)}
+.q{margin:var(--s3) 0 var(--s2);font-weight:700}
+.row{display:grid;gap:10px;grid-template-columns:1fr}
+@media(min-width:560px){.row{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}}
+
+.opt{display:flex;align-items:center;gap:10px;padding:12px 14px;
+border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;transition:.15s}
+.opt:hover{box-shadow:0 8px 18px rgba(0,0,0,.04)}
+.opt input{appearance:none;width:18px;height:18px;border:2px solid var(--ink);border-radius:50%;position:relative}
+.opt input:checked{border-color:var(--accent)}
+.opt input:checked::after{content:"";position:absolute;inset:3px;background:var(--accent);border-radius:50%}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;
+min-height:50px;padding:12px 22px;border:1px solid var(--ink);border-radius:12px;background:#fff;
+font-weight:700;letter-spacing:.01em;transition:.18s;cursor:pointer;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.acc{background:linear-gradient(180deg,#EBD5C6 0%,#E6C6AF 100%);border-color:#E0BCA3}
+.btn.block{width:100%}
+.btn-row{display:grid;gap:12px}
+.hr{height:1px;background:var(--line);margin:var(--s5) 0}
+.center{text-align:center}
+
+.result{display:none;margin-top:var(--s4)}
+.r-title{margin:0 0 var(--s2);font-weight:800;font-size:clamp(18px,2.8vw,22px)}
+.r-text{margin:0 0 var(--s3);color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+<div class="stack">
+<div><span class="nb-badge">NB</span></div>
+<h1>7 диагностических вопросов NB</h1>
+<p class="lead">Это не про «усталость». Это про то, как работает твоя система: время, эмоции, делегирование, нагрузка. Ответы — чтобы понять, где начинается перегруз.</p>
+</div>
+</header>
+
+<main class="wrap">
+<form id="form" class="card" onsubmit="event.preventDefault();showResult();" aria-labelledby="title">
+
+<!-- вопросы -->
+<div class="q">1) У тебя есть структура дня или всё решается «по ходу»?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q1" value="yes" required> Чаще «по ходу»</label>
+<label class="opt"><input type="radio" name="q1" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q1" value="no"> Есть структура</label>
+</div>
+
+<div class="q">2) Успеваешь переключаться между задачами или всё сливается в один поток?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q2" value="yes" required> Сливается</label>
+<label class="opt"><input type="radio" name="q2" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q2" value="no"> Умею переключаться</label>
+</div>
+
+<div class="q">3) Можешь просить о помощи, не оправдываясь?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q3" value="yes" required> Сложно</label>
+<label class="opt"><input type="radio" name="q3" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q3" value="no"> Могу</label>
+</div>
+
+<div class="q">4) Есть ли в дне хотя бы 10 минут, где ты ничего не решаешь?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q4" value="yes" required> Нет</label>
+<label class="opt"><input type="radio" name="q4" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q4" value="no"> Есть</label>
+</div>
+
+<div class="q">5) Бывает ли, что раздражение появляется «на ровном месте»?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q5" value="yes" required> Часто</label>
+<label class="opt"><input type="radio" name="q5" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q5" value="no"> Редко</label>
+</div>
+
+<div class="q">6) Есть ли чувство, что дом или дела держатся только на тебе?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q6" value="yes" required> Часто так чувствую</label>
+<label class="opt"><input type="radio" name="q6" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q6" value="no"> Нет</label>
+</div>
+
+<div class="q">7) Засыпаешь с мыслью «всё равно не всё успела»?</div>
+<div class="row">
+<label class="opt"><input type="radio" name="q7" value="yes" required> Часто</label>
+<label class="opt"><input type="radio" name="q7" value="sometimes"> Иногда</label>
+<label class="opt"><input type="radio" name="q7" value="no"> Редко</label>
+</div>
+
+<div class="hr"></div>
+<div class="btn-row">
+<button class="btn acc block" type="submit">Посмотреть результат</button>
+<a class="btn block" href="index.html">← Вернуться на сайт</a>
+</div>
+</form>
+
+<!-- результаты -->
+<section id="r_ok" class="result card">
+<h3 class="r-title">Система устойчива</h3>
+<p class="r-text">Ты держишь разумный ритм: распределяешь силы, умеешь переключаться и вовремя останавливаться. Сохрани это — не бери лишнего и оставляй в дне короткие «буферы» без решений.</p>
+<div class="btn-row">
+<a class="btn acc block" href="/course.html">Скачать гайд «3 шага к устойчивости»</a>
+<a class="btn block" target="_blank" href="https://t.me/nataliabastrykina">Написать в Telegram</a>
+</div>
+</section>
+
+<section id="r_mid" class="result card">
+<h3 class="r-title">Система перегружена</h3>
+<p class="r-text">Энергия уходит быстрее, чем возвращается. Начни с малого: верни 10 минут тишины и делегируй хотя бы одно дело в день. Гайд NB — готовые схемы и 14-дневный план.</p>
+<div class="btn-row">
+<a class="btn acc block" href="/course.html">Скачать гайд NB</a>
+<a class="btn block" target="_blank" href="https://wa.me/491607460565">WhatsApp</a>
+</div>
+</section>
+
+<section id="r_hi" class="result card">
+<h3 class="r-title">Система на пределе</h3>
+<p class="r-text">Ты близка к выгоранию. Сейчас важнее не «отдохнуть», а пересобрать систему: остановить утечки времени, вернуть границы и распределить ответственность. Гайд NB — быстрый старт для пересборки жизни.</p>
+<div class="btn-row">
+<a class="btn acc block" href="/course.html">Скачать гайд</a>
+<a class="btn block" href="mailto:nnataliabastrykin@hotmail.de">Email</a>
+</div>
+</section>
+
+<footer class="center" style="padding:var(--s6) 0">
+<div class="hr"></div>
+<p class="muted" style="margin:0">© NB — Наталья Бастрыкина · Система устойчивости</p>
+</footer>
+</main>
+
+<script>
+function val(n){return document.querySelector(`input[name="${n}"]:checked`)?.value}
+function showResult(){
+const score=[1,2,3,4,5,6,7].reduce((a,i)=>{
+const v=val('q'+i);
+return a+(v==='yes'?1:0)+(v==='sometimes'?0.5:0);
+},0);
+document.querySelectorAll('.result').forEach(e=>e.style.display='none');
+if(score<=2){document.getElementById('r_ok').style.display='block'}
+else if(score<=4.5){document.getElementById('r_mid').style.display='block'}
+else{document.getElementById('r_hi').style.display='block'}
+document.querySelector('.result[style*="block"]').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
