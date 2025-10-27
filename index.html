@@ -1,271 +1,291 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Система устойчивости NB — Наталья Бастрыкина</title>
-<meta name="description" content="Система устойчивости NB: как не сгореть, когда жизнь не даёт пауз. Структура, управление нагрузкой, эмоциями, делегированием. 7 диагностических вопросов — без прогревов.">
-<!-- Favicon NB -->
-<link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' ry='12' fill='%23E6C6AF'/><text x='16' y='42' font-size='28' font-family='Arial' font-weight='700' fill='%232E2D2B'>NB</text></svg>">
-<style>
-:root{
---bg:#F9F8F5; --ink:#2E2D2B; --muted:#5A5652;
---accent:#E6C6AF; --accent-2:#B8AFA4; --line:rgba(0,0,0,.08);
---maxw:1120px;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Система устойчивости NB — Наталья Бастрыкина</title>
+  <meta name="description" content="Система устойчивости NB: как не сгореть, когда жизнь не даёт пауз. Структура, управление нагрузкой, эмоциями и делегированием. 7 диагностических вопросов — без «прогревов».">
+  <!-- Favicon NB -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' ry='12' fill='%23E6C6AF'/><text x='16' y='42' font-size='28' font-family='Arial' font-weight='700' fill='%232E2D2B'>NB</text></svg>">
+  <style>
+    /* ======= ДИЗАЙН-ТОКЕНЫ ======= */
+    :root{
+      --bg:#F9F8F5; --ink:#2E2D2B; --muted:#5A5652;
+      --accent:#E6C6AF; --accent-2:#B8AFA4; --line:rgba(0,0,0,.08);
+      --maxw:1120px;
 
-/* Ритм (оптимизирован под мобильный) */
---pad: clamp(18px, 4.2vw, 28px); /* внешние поля */
---s1: clamp(6px, 1.4vw, 10px);
---s2: clamp(10px, 2vw, 14px);
---s3: clamp(14px, 3vw, 18px);
---s4: clamp(18px, 3.6vw, 24px);
---s5: clamp(24px, 4.6vw, 32px);
---s6: clamp(32px, 6vw, 48px);
---s7: clamp(44px, 8vw, 64px);
---radius: 12px;
---shadow: 0 10px 22px rgba(0,0,0,.06);
-}
+      /* Ритм (мобайл → десктоп) */
+      --pad: clamp(22px, 5vw, 40px);
+      --s1: clamp(6px, 1.4vw, 10px);
+      --s2: clamp(10px, 2vw, 14px);
+      --s3: clamp(14px, 2.8vw, 18px);
+      --s4: clamp(18px, 3.6vw, 24px);
+      --s5: clamp(26px, 4.6vw, 36px);
+      --s6: clamp(36px, 6vw, 56px);
+      --s7: clamp(54px, 8vw, 84px);
 
-/* База */
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0; background:var(--bg); color:var(--ink);
-font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-line-height:1.6;
-}
-a{color:var(--ink);text-decoration:none}
-img{max-width:100%; display:block; border-radius:var(--radius)}
-.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad)}
-.stack > * + *{margin-top:var(--s4)}
-.muted{color:var(--muted)}
+      --radius: 12px; --shadow: 0 14px 30px rgba(0,0,0,.06);
+    }
 
-/* Типографика */
-h1{margin:0; font-size:clamp(26px, 5.2vw, 44px); line-height:1.18; letter-spacing:.01em}
-h2{margin:0; font-size:clamp(22px, 3.2vw, 32px); line-height:1.28}
-h3{margin:0 0 var(--s2); font-size:clamp(16px, 2.2vw, 18px)}
-p.lead{margin:0; color:var(--muted); font-size:clamp(15px, 2.2vw, 18px); line-height:1.55; max-width:66ch}
+    /* ======= БАЗА ======= */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      line-height:1.65; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:var(--ink); text-decoration:none}
+    img{max-width:100%; display:block; border-radius:var(--radius)}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad)}
+    .stack > * + *{margin-top:var(--s4)}
+    .muted{color:var(--muted)}
+    .hr{height:1px; background:var(--line); margin:var(--s5) 0}
 
-/* Кнопки — премиальная стилизация */
-.btn{
-display:inline-flex; align-items:center; justify-content:center;
-min-height:48px; padding:12px 20px;
-border:1px solid var(--ink); border-radius:12px; background:#fff;
-font-weight:600; letter-spacing:.01em; transition:.18s; cursor:pointer; text-align:center;
-}
-.btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
-.btn.acc{
-background:linear-gradient(180deg, #EBD5C6 0%, #E6C6AF 100%);
-border-color:#E0BCA3;
-}
-.btn.block{width:100%}
-.btn-row{display:grid; gap:var(--s3)}
-@media (min-width: 720px){ .btn-row{grid-template-columns:auto auto; gap:var(--s2)} }
+    /* ======= ТИПОГРАФИКА ======= */
+    h1{margin:0; font-size:clamp(28px,5.4vw,46px); line-height:1.16; letter-spacing:.01em; font-weight:750}
+    h2{margin:0; font-size:clamp(22px,3.2vw,32px); line-height:1.28; font-weight:750}
+    h3{margin:0 0 var(--s2); font-size:clamp(16px,2.2vw,18px); font-weight:700}
+    p.lead{margin:0; color:var(--muted); font-size:clamp(15px,2.2vw,18px); line-height:1.58; max-width:64ch}
+    .intro{max-width:38rem} /* ограничение ширины первого абзаца */
 
-/* Навигация — качественное меню, без налезания */
-nav{
-position:sticky; top:0;
-background:rgba(249,248,245,.94);
-backdrop-filter:saturate(140%) blur(6px);
-border-bottom:1px solid var(--line); z-index:10;
-}
-.bar{display:flex; justify-content:space-between; align-items:center; padding:12px 0}
-.brand{display:flex; align-items:center; gap:10px; font-weight:700}
-.nb{
-display:inline-flex; align-items:center; justify-content:center;
-padding:2px 8px; border:1px solid var(--accent-2); border-radius:8px; color:var(--accent-2);
-font-weight:800; letter-spacing:.08em; font-size:12px
-}
+    /* ======= КНОПКИ ======= */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:50px; padding:12px 22px; border:1px solid var(--ink);
+      border-radius:12px; background:#fff; font-weight:700; letter-spacing:.01em;
+      transition:.18s; cursor:pointer; text-align:center;
+    }
+    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .btn.acc{background:linear-gradient(180deg,#EBD5C6 0%, #E6C6AF 100%); border-color:#E0BCA3}
+    .btn.ghost{border-color:var(--line); color:var(--muted)}
+    .btn.block{width:100%}
+    .btn-row{display:grid; gap:var(--s3)}
+    @media (min-width:720px){ .btn-row{grid-template-columns:auto auto; gap:var(--s2)} }
 
-/* Меню: desktop + mobile dropdown */
-.nav{display:flex; gap:16px}
-.nav a{color:var(--muted); font-size:14px}
-.menu-btn{
-display:none; width:38px; height:38px; border:1px solid var(--line); border-radius:9px;
-align-items:center; justify-content:center; background:#fff; cursor:pointer;
-}
-.menu-btn span{width:18px; height:2px; background:var(--ink); position:relative; display:block}
-.menu-btn span::before, .menu-btn span::after{
-content:""; position:absolute; left:0; width:18px; height:2px; background:var(--ink);
-}
-.menu-btn span::before{top:-6px} .menu-btn span::after{top:6px}
+    /* ======= НАВИГАЦИЯ ======= */
+    nav{
+      position:sticky; top:0; background:rgba(249,248,245,.95);
+      backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid var(--line); z-index:20;
+    }
+    .bar{display:flex; justify-content:space-between; align-items:center; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .nb{display:inline-flex; align-items:center; justify-content:center; padding:2px 8px; border:1px solid var(--accent-2); border-radius:8px; color:var(--accent-2); font-weight:800; letter-spacing:.08em; font-size:12px}
+    .nav{display:flex; gap:18px}
+    .nav a{color:var(--muted); font-size:14px}
+    .menu-btn{display:none; width:40px; height:40px; border:1px solid var(--line); border-radius:10px; align-items:center; justify-content:center; background:#fff; cursor:pointer}
+    .menu-btn span{width:20px; height:2px; background:var(--ink); position:relative; display:block}
+    .menu-btn span::before,.menu-btn span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:var(--ink)}
+    .menu-btn span::before{top:-6px} .menu-btn span::after{top:6px}
+    @media (max-width:880px){
+      .nav{display:none} .menu-btn{display:flex}
+      .nav-panel{display:none; position:absolute; inset:56px var(--pad) auto var(--pad); background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow); padding:8px; z-index:19}
+      .nav-panel a{display:block; padding:12px 12px; border-radius:9px; color:var(--ink); font-size:15px}
+      .nav-panel a:hover{background:#F3EFEA}
+      .nav-panel.open{display:block}
+    }
 
-@media (max-width: 860px){
-.nav{display:none}
-.menu-btn{display:flex}
-.nav-panel{
-display:none; position:absolute; inset:56px var(--pad) auto var(--pad);
-background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);
-padding:12px; z-index:9;
-}
-.nav-panel a{
-display:block; padding:10px 12px; border-radius:8px; color:var(--ink); font-size:15px;
-}
-.nav-panel a:hover{background:#F3EFEA}
-.nav-panel.open{display:block}
-}
+    /* ======= ПЕРВЫЙ ЭКРАН ======= */
+    .hero{padding:var(--s7) 0 var(--s6)}
+    .hero-grid{display:grid; gap:var(--s6); align-items:center; grid-template-columns:1fr}
+    .hero .text{padding:var(--s5) var(--pad) var(--s4)}
+    .media{border-radius:var(--radius); overflow:hidden; box-shadow:0 1px 1px rgba(0,0,0,.02)}
+    .media img{width:100%; height:clamp(260px,48vw,420px); object-fit:cover; object-position:50% 40%}
 
-/* Первый экран — плотный мобильный блок */
-.hero{padding:var(--s7) 0 var(--s6)}
-.hero-grid{
-display:grid; gap:var(--s5); align-items:center;
-grid-template-columns:1fr; /* мобайл: один столбец */
-}
-.media{border-radius:12px; overflow:hidden; box-shadow:0 1px 1px rgba(0,0,0,.02)}
-.media img{
-width:100%; height: clamp(220px, 48vw, 420px);
-object-fit:cover; display:block;
-}
+    /* ======= СЕКЦИИ ======= */
+    .section{padding:var(--s6) 0; border-top:1px solid var(--line)}
+    .grid{display:grid; gap:var(--s4); grid-template-columns:1fr}
+    .grid.cols-2{grid-template-columns:1fr}
+    .grid.cols-3{grid-template-columns:1fr}
+    .card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:var(--s4)}
 
-/* Секции */
-.section{padding:var(--s6) 0; border-top:1px solid var(--line)}
-.grid{display:grid; gap:var(--s4); grid-template-columns:1fr}
-.grid.cols-2{grid-template-columns:1fr}
-.grid.cols-3{grid-template-columns:1fr}
-.card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:var(--s4)}
+    /* Фото "Обо мне" */
+    #about .media img{height:clamp(240px,42vw,420px); object-fit:cover; object-position:50% 35%; box-shadow:0 4px 14px rgba(0,0,0,.05)}
 
-@media (min-width: 980px){
-.hero-grid{grid-template-columns: 1.05fr .95fr; gap:var(--s6)}
-.grid.cols-2{grid-template-columns: repeat(2, minmax(0,1fr))}
-.grid.cols-3{grid-template-columns: repeat(3, minmax(0,1fr))}
-.btn-row{grid-template-columns:auto auto}
-}
+    /* Десктопные сетки */
+    @media (min-width:980px){
+      .hero-grid{grid-template-columns:1.05fr .95fr; gap:var(--s6)}
+      .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .btn-row{grid-template-columns:auto auto}
+      .hero .text{padding:0}
+    }
 
-/* Футер */
-footer{padding:var(--s6) 0; border-top:1px solid var(--line); color:var(--muted)}
-.footerbar{display:flex; align-items:center; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
-.nb-badge{
-display:inline-flex; align-items:center; justify-content:center;
-padding:3px 10px; border:1px solid var(--accent-2); border-radius:10px; color:var(--accent-2);
-font-weight:800; letter-spacing:.08em; font-size:12px
-}
-</style>
+    /* ======= ФУТЕР ======= */
+    footer{padding:var(--s6) 0; border-top:1px solid var(--line); color:var(--muted)}
+    .footerbar{display:flex; align-items:center; justify-content:space-between; gap:var(--s3); flex-wrap:wrap}
+    .nb-badge{display:inline-flex; align-items:center; justify-content:center; padding:3px 10px; border:1px solid var(--accent-2); border-radius:10px; color:var(--accent-2); font-weight:800; letter-spacing:.08em; font-size:12px}
+  </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-<div class="wrap bar">
-<div class="brand">
-<span class="nb">NB</span><span>Наталья Бастрыкина</span>
-</div>
-
-<!-- desktop -->
-<div class="nav">
-<a href="#about">Обо мне</a>
-<a href="#method">Метод</a>
-<a href="#clients">Кому подойдёт</a>
-<a href="#contact">Контакты</a>
-</div>
-
-<!-- mobile -->
-<button class="menu-btn" aria-label="Открыть меню" onclick="document.querySelector('.nav-panel').classList.toggle('open')">
-<span></span>
-</button>
-</div>
-<div class="wrap">
-<div class="nav-panel" role="menu">
-<a href="#about" onclick="closeMenu()">Обо мне</a>
-<a href="#method" onclick="closeMenu()">Метод</a>
-<a href="#clients" onclick="closeMenu()">Кому подойдёт</a>
-<a href="#contact" onclick="closeMenu()">Контакты</a>
-</div>
-</div>
+  <div class="wrap bar">
+    <div class="brand"><span class="nb">NB</span><span>Наталья Бастрыкина</span></div>
+    <div class="nav">
+      <a href="#about">Обо мне</a>
+      <a href="#forwhom">Для кого</a>
+      <a href="#method">Метод</a>
+      <a href="#impact">Что изменится</a>
+      <a href="#feedback">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </div>
+    <button class="menu-btn" aria-label="Открыть меню" onclick="document.querySelector('.nav-panel').classList.toggle('open')">
+      <span></span>
+    </button>
+  </div>
+  <div class="wrap">
+    <div class="nav-panel" role="menu">
+      <a href="#about" onclick="closeMenu()">Обо мне</a>
+      <a href="#forwhom" onclick="closeMenu()">Для кого</a>
+      <a href="#method" onclick="closeMenu()">Метод</a>
+      <a href="#impact" onclick="closeMenu()">Что изменится</a>
+      <a href="#feedback" onclick="closeMenu()">Отзывы</a>
+      <a href="#contact" onclick="closeMenu()">Контакты</a>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <header class="wrap hero">
-<div class="hero-grid">
-<div class="stack">
-<h1>Как не сгореть, когда жизнь не даёт пауз.</h1>
-<p class="lead">Система устойчивости NB — структурный подход для женщин в постоянной ответственности: работа, дом, семья, решения. Без мотивации и «прогревов» — только рабочие шаги.</p>
-<div class="btn-row">
-<a class="btn acc block" href="test.html">Пройти 7 диагностических вопросов</a>
-<a class="btn block" href="/course.html">Скачать мини-курс «3 шага к устойчивости»</a>
-</div>
-</div>
-<div class="media"><img src="photo_hero.jpg" alt="Спокойный свет, реальная жизнь — первый экран"></div>
-</div>
+  <div class="hero-grid">
+    <div class="text">
+      <div class="stack">
+        <h1>Как не сгореть, когда жизнь не даёт пауз.</h1>
+        <p class="lead intro">Система устойчивости NB — структурный подход для женщин в постоянной ответственности: работа, дом, семья, решения. Ни мотивации, ни «прогревов» — только рабочие шаги.</p>
+        <div class="btn-row">
+          <a class="btn acc block" href="test.html">Пройти 7 диагностических вопросов</a>
+          <a class="btn block" href="/course.html">Скачать мини-гайд «3 шага к устойчивости»</a>
+        </div>
+      </div>
+    </div>
+    <div class="media"><img src="photo_hero.jpg" alt="Рабочее утро: порядок, структура, свет"></div>
+  </div>
 </header>
+
+<!-- FOR WHOM -->
+<section id="forwhom" class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="stack">
+      <h2>Для кого создана система NB</h2>
+      <div class="grid cols-2">
+        <div class="card"><p class="muted">Для тех, кто работает — и сил на дом уже не остаётся.</p></div>
+        <div class="card"><p class="muted">Для тех, кто «просто дома», но делает всё — и устает не меньше.</p></div>
+        <div class="card"><p class="muted">Для тех, кто не хочет лечить выгорание, а хочет не доводить до него.</p></div>
+        <div class="card"><p class="muted">Для тех, кто хочет делегировать, планировать и восстанавливаться без чувства вины.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
-<div class="wrap grid cols-2" style="align-items:center">
-<div class="stack">
-<h2>Обо мне</h2>
-<p>Я — Наталья Бастрыкина. Живу в том же ритме, что и мои клиентки: семья, работа, перелёты, собаки, решения. Знаю, как перегруз собирается из «надо» и «срочно» — и как вернуть управляемость.</p>
-<p>Система NB — профилактика выгорания: структура времени, управление эмоциями, делегирование без вины и короткие точки восстановления, которые помещаются в реальный день.</p>
-</div>
-<div class="media"><img src="photo_about.jpg" alt="Наталья — спокойный портрет"></div>
-</div>
+  <div class="wrap grid cols-2" style="align-items:center">
+    <div class="stack">
+      <h2>Обо мне</h2>
+      <p class="lead">Я живу в том же ритме, что и мои клиентки: семья, работа, перелёты, ответственность. Я знаю, как перегруз собирается из «надо» и «срочно» — и как вернуть управляемость.</p>
+      <p>Система NB — профилактика выгорания: структура времени, управление эмоциями, делегирование без вины и короткие точки восстановления, которые помещаются в реальный день.</p>
+    </div>
+    <div class="media"><img src="photo_about.jpg" alt="Рабочее пространство: светлый стол, порядок, ясность"></div>
+  </div>
 </section>
 
 <!-- METHOD -->
 <section id="method" class="section" style="background:#fff">
-<div class="wrap">
-<div class="stack">
-<h2>Метод NB: пять элементов устойчивости</h2>
-<div class="grid cols-3">
-<div class="card"><h3>Энергия</h3><p class="muted">Профилактика истощения — точки восстановления в течение дня.</p></div>
-<div class="card"><h3>Время</h3><p class="muted">Структура, приоритеты и буферы — не жить в аврале.</p></div>
-<div class="card"><h3>Эмоции</h3><p class="muted">Как не срываться и быстро возвращаться в норму.</p></div>
-<div class="card"><h3>Делегирование</h3><p class="muted">Разгрузить себя без чувства вины.</p></div>
-<div class="card"><h3>Равновесие</h3><p class="muted">Держать состояние без откатов.</p></div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="stack">
+      <h2>Метод NB: пять элементов устойчивости</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Энергия</h3><p class="muted">Профилактика истощения — точки восстановления в течение дня.</p></div>
+        <div class="card"><h3>Время</h3><p class="muted">Структура, приоритеты и буферы — не жить в аврале.</p></div>
+        <div class="card"><h3>Эмоции</h3><p class="muted">Как не срываться и быстро возвращаться в норму.</p></div>
+        <div class="card"><h3>Делегирование</h3><p class="muted">Разгрузить себя без чувства вины.</p></div>
+        <div class="card"><h3>Равновесие</h3><p class="muted">Держать состояние без откатов.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CLIENTS -->
-<section id="clients" class="section" style="background:#F7F6F4">
-<div class="wrap">
-<div class="stack">
-<h2>Кому подойдёт</h2>
-<div class="grid cols-2">
-<div class="card"><p class="muted">Тем, кто работает — и сил на семью не остаётся.</p></div>
-<div class="card"><p class="muted">Тем, кто «просто дома», но делает всё — и устает не меньше.</p></div>
-<div class="card"><p class="muted">Тем, кто не хочет лечить выгорание, а хочет не доводить до него.</p></div>
-<div class="card"><p class="muted">Тем, кто хочет делегировать, планировать и восстанавливаться без вины.</p></div>
-</div>
-<div style="text-align:center">
-<a class="btn acc" href="test.html">Пройти 7 вопросов</a>
-</div>
-</div>
-</div>
+<!-- IMPACT -->
+<section id="impact" class="section" style="background:#F7F6F4">
+  <div class="wrap">
+    <div class="stack">
+      <h2>Что меняется за 14 дней</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>− аврал</h3><p class="muted">добавляешь 3 буфера в день</p></div>
+        <div class="card"><h3>+ фокус</h3><p class="muted">2 приоритетные задачи вместо бесконечного списка</p></div>
+        <div class="card"><h3>− срывы</h3><p class="muted">техника саморегуляции «стоп-петля»</p></div>
+      </div>
+      <div style="text-align:center">
+        <a class="btn acc" href="test.html">Пройти 7 вопросов</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback" class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="stack">
+      <h2>Отзывы и первые результаты</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <p class="muted">«Через неделю по системе NB я впервые легла спать спокойно. Маленькие шаги, но исчезла тревога вечера.»</p>
+          <p><strong>Елена, 38</strong></p>
+        </div>
+        <div class="card">
+          <p class="muted">«Добавила три “буфера” и перестала злиться на семью. В день то же количество дел, но нет ощущения гонки.»</p>
+          <p><strong>Мария, 41</strong></p>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Подписка на обновления NB</h3>
+          <p class="muted">1 письмо в неделю — короткая мысль и инструмент. Без спама.</p>
+          <a class="btn ghost block" href="mailto:nnataliabastrykin@hotmail.de?subject=Подписка%20NB&body=Имя:%20">Подписаться по email</a>
+        </div>
+        <div class="card">
+          <h3>Гайд «3 шага к устойчивости»</h3>
+          <p class="muted">Мини-книга NB: 15 страниц структуры и рабочих форм. Скачивание сразу после оплаты.</p>
+          <a class="btn acc block" href="/course.html">Скачать гайд</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-<div class="wrap" style="text-align:center">
-<div class="stack" style="align-items:center">
-<h2>Контакты</h2>
-<p class="lead">Если чувствуешь, что пора выдохнуть — напиши. Спокойно, по делу, без давления.</p>
-<div class="btn-row" style="justify-items:center">
-<a class="btn acc block" target="_blank" rel="noopener" href="https://t.me/nataliabastrykina">Telegram</a>
-<a class="btn block" target="_blank" rel="noopener" href="https://wa.me/491607460565">WhatsApp</a>
-<a class="btn block" target="_blank" rel="noopener" href="mailto:nnataliabastrykin@hotmail.de">Email</a>
-</div>
-</div>
-</div>
+  <div class="wrap" style="text-align:center">
+    <div class="stack" style="align-items:center">
+      <h2>Контакты</h2>
+      <p class="lead">Если чувствуешь, что пора выдохнуть — напиши. Спокойно, по делу, без давления.</p>
+      <div class="btn-row" style="justify-items:center">
+        <a class="btn acc block" target="_blank" rel="noopener" href="https://t.me/nataliabastrykina">Telegram</a>
+        <a class="btn block"  target="_blank" rel="noopener" href="https://wa.me/491607460565">WhatsApp</a>
+        <a class="btn block"  target="_blank" rel="noopener" href="mailto:nnataliabastrykin@hotmail.de">Email</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<div class="wrap footerbar">
-<div><span class="nb-badge">NB</span> Наталья Бастрыкина — Система устойчивости</div>
-<div>© Все права сохранены</div>
-</div>
+  <div class="wrap footerbar">
+    <div><span class="nb-badge">NB</span> Наталья Бастрыкина — Система устойчивости</div>
+    <div>© Все права сохранены</div>
+  </div>
 </footer>
 
 <script>
-function closeMenu(){ document.querySelector('.nav-panel').classList.remove('open'); }
-// Закрывать меню при клике вне панели (мобайл)
-document.addEventListener('click', (e)=>{
-const p = document.querySelector('.nav-panel'); const b = document.querySelector('.menu-btn');
-if(!p) return;
-if(p.classList.contains('open') && !p.contains(e.target) && !b.contains(e.target)){ p.classList.remove('open'); }
-});
+  function closeMenu(){ const p=document.querySelector('.nav-panel'); if(p) p.classList.remove('open'); }
+  document.addEventListener('click',(e)=>{
+    const p=document.querySelector('.nav-panel'); const b=document.querySelector('.menu-btn');
+    if(!p||!b) return;
+    if(p.classList.contains('open') && !p.contains(e.target) && !b.contains(e.target)){ p.classList.remove('open'); }
+  });
 </script>
 </body>
 </html>
