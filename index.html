@@ -1,117 +1,120 @@
+<!doctype html>
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NB System — как перестать жить в усталости</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NB System — структура жизни без усталости</title>
 <style>
-body {
-font-family: "Helvetica Neue", Arial, sans-serif;
-color: #2e2d2b;
-background-color: #faf9f7;
-margin: 0;
-line-height: 1.6;
-}
-header {
-text-align: center;
-padding: 60px 20px 40px;
-}
-header h1 {
-font-size: 2em;
-margin-bottom: 10px;
-}
-header p {
-max-width: 600px;
-margin: 0 auto;
-font-size: 1.1em;
-color: #555;
-}
-section {
-max-width: 780px;
-margin: 40px auto;
-padding: 0 20px;
-}
-h2 {
-margin-top: 40px;
-font-size: 1.5em;
-color: #2e2d2b;
-}
-ul {
-list-style-type: none;
-padding: 0;
-}
-li {
-margin-bottom: 10px;
-padding-left: 20px;
-position: relative;
-}
-li::before {
-content: "•";
-position: absolute;
-left: 0;
-color: #b59c7b;
-}
-.cta {
-display: block;
-width: 280px;
-margin: 50px auto;
-padding: 14px 0;
-background-color: #b59c7b;
-color: #fff;
-text-align: center;
-text-decoration: none;
-border-radius: 6px;
-font-weight: 600;
-transition: background 0.3s;
-}
-.cta:hover {
-background-color: #a28b6e;
-}
-footer {
-text-align: center;
-padding: 40px 20px 60px;
-color: #777;
-font-size: 0.9em;
-}
+  :root{
+    --bg:#FAF9F7; --ink:#2E2D2B; --muted:#555; --accent:#B59C7B; --line:#EAE6E1;
+    --max:860px; --pad:clamp(16px,4vw,28px);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.65}
+  img{max-width:100%;display:block;border-radius:12px}
+  header,section,footer{max-width:var(--max);margin:0 auto;padding:clamp(24px,6vw,60px) var(--pad)}
+  h1{margin:0 0 .3em;font-size:clamp(24px,4.6vw,40px);font-family:"Cormorant Garamond",serif;line-height:1.15}
+  h2{margin:1.6em 0 .6em;font-size:clamp(18px,3vw,26px);font-family:"Cormorant Garamond",serif}
+  p{margin:.6em 0;color:var(--muted)}
+  ul,ol{padding-left:1.2em;margin:.2em 0}
+  li{margin:.4em 0}
+  .grid{display:grid;gap:clamp(16px,3vw,28px)}
+  .cols-2{grid-template-columns:1fr} @media(min-width:880px){.cols-2{grid-template-columns:1.1fr .9fr}}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:8px;
+       background:var(--accent);color:#fff;text-decoration:none;font-weight:700;min-width:220px}
+  .btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(14px,3vw,24px)}
+  .muted{color:#777}
+  .note{font-size:.9em;color:#777;margin-top:.6em}
+  footer{text-align:center;color:#777;font-size:.9em}
+  .hero-pic{aspect-ratio:16/9;object-fit:cover;object-position:50% 40%;background:#f3efe9}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>NB System — система, которая помогает перестать жить в усталости</h1>
-<p>Европейский взгляд на то, как устроить жизнь без перегруза, чувства вины и вечной гонки.
-Структура вместо хаоса. Ясность вместо выгорания.</p>
-<a href="https://boosty.to/natalia.bastrykina/posts/e1accdbe-5b4e-43c4-b199-d28687cc72ce?share=post_link" class="cta">Скачать гайд за 1 900 ₽</a>
+  <div class="grid cols-2" style="align-items:center">
+    <div>
+      <h1>NB System — структура жизни без постоянной усталости</h1>
+      <p>Европейский взгляд на то, как жить без изнуряющей гонки и чувства вины. Порядок вместо хаоса. Ясность вместо выгорания.</p>
+      <div class="cta-row">
+        <a href="YOUR_TEST_LINK" class="btn" target="_blank" rel="noopener">Пройти тест NB</a>
+        <a href="YOUR_BOOSTY_LINK" class="btn alt" target="_blank" rel="noopener">Скачать гайд — 1 900 ₽</a>
+      </div>
+      <p class="note">2 минуты — чтобы понять, где утекают силы. 15 минут — чтобы вернуть порядок.</p>
+    </div>
+    <div>
+      <img src="photo_hero.jpg" alt="Тёплый свет, рабочее место и спокойствие — атмосфера NB System" class="hero-pic">
+    </div>
+  </div>
 </header>
 
 <section>
-<h2>Почему ты устаёшь</h2>
-<p>Ты не ленивая и не неэффективная. Просто твой день устроен так, что в нём нет места паузе.
-NB System помогает вернуть порядок, в котором хватает сил и на дела, и на себя.</p>
+  <h2>Почему мы устаём</h2>
+  <p>Ты не ленивая и не «неорганизованная». Просто система твоих дней устроена так, что в ней нет точки. Работа растягивается на вечер, вечер — на ночь, а мозг не получает сигнал «всё, можно отдыхать». NB System меняет конструкцию дня — без революций и отпусков.</p>
 
-<h2>Что даёт NB System</h2>
-<ul>
-<li>Чёткую структуру дня — чтобы энергия не утекала в мелочи.</li>
-<li>Спокойствие вместо раздражения и спешки.</li>
-<li>Возможность отдыхать без чувства вины.</li>
-</ul>
+  <h2>Что меняется после NB System</h2>
+  <div class="grid" style="grid-template-columns:1fr; gap:16px">
+    <div class="card">Порядок в делах — без ощущения гонки.</div>
+    <div class="card">Спокойствие вместо раздражения и спешки.</div>
+    <div class="card">Отдых без чувства вины — силы возвращаются естественно.</div>
+  </div>
 
-<h2>Как это работает</h2>
-<ol>
-<li>Замечай, где теряешь силы.</li>
-<li>Меняй не жизнь, а последовательность.</li>
-<li>Делай меньше, но завершай.</li>
-</ol>
+  <h2>Как это работает</h2>
+  <ol>
+    <li><strong>Время:</strong> завершать день, а не падать в него — 2 главных дела, «точка», короткие «коридоры» между задачами.</li>
+    <li><strong>Эмоции:</strong> замечать — называть — переносить реакцию: тело учится остывать без срывов.</li>
+    <li><strong>Сила:</strong> не напор, а ритм — маленькие паузы без цели, ритм 60/5, мягкий свет вечером.</li>
+  </ol>
+</section>
 
-<h2>Гайд “3 шага, чтобы перестать уставать от своей жизни”</h2>
-<p>Это не мотивация и не терапия. Это короткая инструкция, как вернуть себе энергию без революций и отпусков.
-За 15 минут ты поймёшь, где именно утекают силы — и что поменять, чтобы их вернуть.</p>
-<a href="#" class="cta">Скачать гайд за 1 900 ₽</a>
+<section>
+  <h2>Гайд «3 шага, чтобы перестать уставать от своей жизни»</h2>
+  <div class="grid cols-2" style="align-items:center">
+    <div>
+      <p>Короткая практическая инструкция без лозунгов. За 15 минут ты увидишь, где именно теряются силы, и что поменять, чтобы они вернулись. Внутри — объяснения «почему», простые шаги и 14-дневный трекер.</p>
+      <a href="YOUR_BOOSTY_LINK" class="btn" target="_blank" rel="noopener">Скачать за 1 900 ₽</a>
+      <p class="note">Если за 7 дней ты не почувствуешь пользы — напиши, мы вернём деньги.</p>
+    </div>
+    <div><img src="photo_guide.jpg" alt="Обложка и развороты гайда NB System"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Тест NB — на каком уровне твоя усталость</h2>
+  <div class="grid cols-2" style="align-items:center">
+    <div><img src="photo_test.jpg" alt="Фрагмент теста NB: 7 вопросов, 2 минуты"></div>
+    <div>
+      <p>7 простых вопросов, чтобы понять, где утекают силы: во времени, в эмоциях или в контроле. Это не диагностика, а начало порядка.</p>
+      <a href="YOUR_TEST_LINK" class="btn alt" target="_blank" rel="noopener">Пройти тест (2 минуты)</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Кто я</h2>
+  <div class="grid cols-2" style="align-items:center">
+    <div><img src="photo_natalia.jpg" alt="Наталья Бастрыкина — автор NB System"></div>
+    <div>
+      <p>Я прошла через изнуряющую усталость и научилась жить иначе — не ломая жизнь, а меняя её структуру. Я привезла в СНГ европейский взгляд: меньше героизма, больше системы. NB System — не мотивация, а работающие шаги, которые возвращают ясность и силы.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Отзывы</h2>
+  <div class="grid" style="grid-template-columns:1fr; gap:16px">
+    <div class="card">«Перестала “держаться” по вечерам. День стал короче, а сил — больше.» — Марина, 39</div>
+    <div class="card">«Ушло раздражение. Научилась говорить: “Мне нужна пауза”.» — Анна, 42</div>
+    <div class="card">«Впервые за долгое время утро без тяжести. Это работает.» — Ольга, 36</div>
+  </div>
 </section>
 
 <footer>
-NB System © 2025 · Наталья Бастрыкина · Ясность вместо усталости
+  NB System © 2025 · Наталья Бастрыкина · Жизнь в структуре, а не в изнурении
 </footer>
 
 </body>
 </html>
-
