@@ -10,54 +10,30 @@
 <meta property="og:title" content="NB System — спокойная жизнь как система">
 <meta property="og:description" content="Европейская система восстановления: тест, гайд и консультация. Без клише — только работающая структура.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://yourdomain/photo_og.jpg"><!-- TODO: заменить -->
+<meta property="og:image" content="photo_og.jpg"><!-- TODO: заменить -->
 <meta property="og:url" content="https://yourdomain/"><!-- TODO: заменить -->
 <meta name="theme-color" content="#FAF9F7">
 <style>
 :root{
---bg:#FAF9F7; /* бежевый фон */
---ink:#2E2D2B; /* графитовый текст */
---muted:#5A5652; /* приглушённый текст */
---accent:#B59C7B; /* песочный акцент */
---line:#EDE9E3; /* светлая линия */
---alt:#D8D6D1; /* серо-оливковый слой */
---alt2:#CCC7C0; /* тёплый серый для тонких акцентов */
---max:920px;
---pad:clamp(16px,4vw,28px);
+--bg:#FAF9F7;--ink:#2E2D2B;--muted:#4B4844;--accent:#B59C7B;--line:#EDE9E3;
+--alt:#D8D6D1;--alt2:#CCC7C0;--max:920px;--pad:clamp(16px,4vw,28px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
-background:var(--bg);
-color:var(--ink);
+background:var(--bg);color:var(--ink);
 font-family:"Inter","Helvetica Neue",Arial,sans-serif;
-line-height:1.7;
-letter-spacing:.1px;
+line-height:1.7;letter-spacing:.1px;
 }
-/* лёгкая фактура бумаги (очень деликатно) */
-body::before{
-content:"";
-position:fixed;inset:0;pointer-events:none;z-index:-1;
-background:
-radial-gradient(transparent 60%,rgba(0,0,0,.02) 61%) 0 0/300px 300px,
-linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6));
-}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+background:radial-gradient(transparent 60%,rgba(0,0,0,.02) 61%) 0 0/300px 300px,
+linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6));}
 img{max-width:100%;display:block;border-radius:12px}
 header,section,footer{max-width:var(--max);margin:0 auto;padding:clamp(24px,5vw,52px) var(--pad)}
-h1{
-font-family:"Cormorant Garamond",serif;
-font-weight:600;
-letter-spacing:.2px;
-font-size:clamp(26px,5vw,40px);
-line-height:1.15;margin:0 0 .35em;
-}
-h2{
-font-family:"Cormorant Garamond",serif;
-font-weight:500;
-letter-spacing:.3px;
-font-size:clamp(20px,3.6vw,28px);
-line-height:1.2;margin:1.1em 0 .5em;
-}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.2px;
+font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0 0 .35em}
+h2{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:.3px;
+font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:1.1em 0 .5em}
 p{margin:.55em 0;color:var(--muted)}
 ul,ol{margin:.6em 0 .6em 1.2em;color:var(--muted)}
 .grid{display:grid;gap:clamp(16px,3vw,28px)}
@@ -65,34 +41,21 @@ ul,ol{margin:.6em 0 .6em 1.2em;color:var(--muted)}
 @media(min-width:880px){.cols-2{grid-template-columns:1.05fr .95fr}}
 .hero-pic{aspect-ratio:16/9;object-fit:cover;object-position:50% 40%;background:#f3efe9}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-.btn{
-display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:8px;
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:8px;
 background:var(--accent);color:#fff;text-decoration:none;font-weight:600;min-width:210px;transition:.2s;
-box-shadow:0 2px 4px rgba(0,0,0,.05);
-}
+box-shadow:0 2px 4px rgba(0,0,0,.05);}
 .btn:hover{filter:brightness(.95)}
 .btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.card{
-background:#fff;border:1px solid var(--line);border-radius:12px;
-padding:clamp(14px,3vw,22px);box-shadow:0 2px 4px rgba(0,0,0,.02)
-}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;
+padding:clamp(14px,3vw,22px);box-shadow:0 2px 4px rgba(0,0,0,.02)}
 .note{font-size:.9em;color:#76716B;margin-top:.4em}
 .micro{font-size:.88em;color:#7d7a76}
 .kpis{display:grid;grid-template-columns:1fr;gap:12px}
 @media(min-width:720px){.kpis{grid-template-columns:repeat(3,1fr)}}
-h2 + p{margin-top:.2em}
-.tight p{margin:.4em 0}
+.section-alt{background:linear-gradient(0deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),var(--alt)}
+.quote{border-left:3px solid var(--accent);padding:12px 14px;border-radius:8px;background:#fff;
+color:var(--muted);font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2px}
 footer{text-align:center;color:#777;font-size:.9em;padding-bottom:64px}
-.section-alt{background:linear-gradient(0deg,rgba(255,255,255,.6),rgba(255,255,255,.6)),var(--alt)}
-.section-alt .card{border-color:var(--alt2);background:#ffffff}
-
-/* цитата-пауза */
-.quote{
-border-left:3px solid var(--accent);padding:12px 14px;border-radius:8px;background:#fff;color:var(--muted);
-font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2px
-}
-
-/* Липкий мобильный бар с мини-логотипом */
 @media(max-width:720px){
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
 padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items:center;z-index:50}
@@ -100,62 +63,67 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 .sticky-cta .brand .leaf{font-size:1.1em}
 .sticky-cta .btn{min-width:auto;padding:12px 16px}
 }
-
-/* Мини-анимации появления (подлиннее) */
+@media(min-width:1024px){.sticky-cta{display:none}}
 .fade{opacity:0;transform:translateY(6px);animation:fadein .7s ease .08s forwards}
 .fade2{opacity:0;transform:translateY(6px);animation:fadein .7s ease .18s forwards}
 @keyframes fadein{to{opacity:1;transform:none}}
-
-/* маленький верхний микро-хедер */
 .topbar{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;gap:8px;color:#6f6b66;font-size:.9em}
 .topbar .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
 .separator{max-width:var(--max);margin:0 auto;border-top:1px solid var(--line)}
 .icon{font-size:1.1em;margin-right:6px}
+
+/* ----- MOBILE IMAGE ADJUSTMENTS ----- */
+@media (max-width: 720px){
+.hero-pic{
+height:clamp(180px,36vh,300px);
+aspect-ratio:auto;object-position:50% 45%;margin-top:6px;
+border-radius:10px;border:1px solid var(--line);
+box-shadow:0 1px 2px rgba(0,0,0,.02);background:#fff;
+}
+#guide img,#test img,#consult img,#about img{
+max-width:88%;margin:8px auto 12px;height:auto;
+border-radius:10px;border:1px solid var(--line);
+box-shadow:0 1px 2px rgba(0,0,0,.02);background:#fff;
+}
+.card{padding:clamp(12px,3.2vw,18px);}
+.note,.micro{line-height:1.8;}
+}
+@media (prefers-reduced-motion:reduce){
+.fade,.fade2{animation:none!important;opacity:1;transform:none;}
+}
 </style>
 </head>
 <body>
 
-<!-- Микро-хедер -->
-<div class="topbar" aria-label="NB System">
-<span class="dot" aria-hidden="true"></span>
-<span>NB System · Европейская система восстановления</span>
-</div>
-<div class="separator" aria-hidden="true"></div>
+<div class="topbar"><span class="dot"></span><span>NB System · Европейская система восстановления</span></div>
+<div class="separator"></div>
 
-<!-- HERO -->
 <header class="fade">
 <div class="grid cols-2" style="align-items:center">
 <div>
 <h1>NB System — вернуть ясность и энергию без надрыва</h1>
 <p class="tight">Европейский подход к выходу из выгорания. Помогает перестать жить на пределе и выстроить спокойный ритм дня: <strong>время</strong>, <strong>эмоции</strong>, <strong>сила</strong>.</p>
 <div class="cta-row" role="group" aria-label="Основные действия">
-<a href="test.html" class="btn" target="_blank" rel="noopener" aria-label="Пройти тест NB System">Пройти тест NB (2 минуты)</a>
-<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener" aria-label="Записаться на консультацию">Записаться на консультацию</a>
+<a href="test.html" class="btn" target="_blank" rel="noopener">Пройти тест NB (2 минуты)</a>
+<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener">Записаться на консультацию</a>
 </div>
 <p class="note">Начни с теста — 2 минуты, чтобы понять, где утекают силы. Ниже — гайд и консультация.</p>
 </div>
-<div>
-<img src="photo_hero.jpg" alt="Тёплый свет, порядок на столе, атмосфера NB System" class="hero-pic" loading="lazy" width="1280" height="720">
-</div>
+<div><img src="photo_hero.jpg" alt="Тёплый свет, порядок на столе — NB System" class="hero-pic" loading="lazy"></div>
 </div>
 </header>
 
-<!-- 3 ОПОРЫ -->
 <section class="fade2">
 <h2>Три опоры устойчивости</h2>
 <div class="kpis">
 <div class="card"><span class="icon">⏰</span><strong>Время</strong> — день имеет начало и конец. Точки, паузы, два главных дела.</div>
 <div class="card"><span class="icon">🌿</span><strong>Эмоции</strong> — место чувствам без срывов. Замечать, называть, отпускать.</div>
-<div class="card"><span class="icon">⚖️</span><strong>Сила</strong> — ритм вместо героизма. Завершать раньше, чем «на пределе».</div>
+<div class="card"><span class="icon">⚖️</span><strong>Сила</strong> — ритм вместо геризма. Завершать раньше, чем «на пределе».</div>
 </div>
 </section>
 
-<!-- Пауза-цитата -->
-<section class="fade">
-<div class="quote">Ты не обязана быть бесконечной. У тебя есть право быть устойчивой.</div>
-</section>
+<section class="fade"><div class="quote">Ты не обязана быть бесконечной. У тебя есть право быть устойчивой.</div></section>
 
-<!-- ГАЙД (слойной фон убираем — здесь «белое» для фокуса) -->
 <section id="guide" class="fade">
 <h2>Гайд «3 шага к устойчивости» (PDF)</h2>
 <div class="grid cols-2" style="align-items:center">
@@ -169,25 +137,21 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 <p class="micro">Внутри — 14-дневный трекер и практики. Профессиональный тон, без мотивационных клише.</p>
 <a href="https://boosty.to/YOUR_GUIDE" class="btn" target="_blank" rel="noopener">Скачать гайд — 1 900 ₽</a>
 </div>
-<div>
-<img src="photo_guide.jpg" alt="Обложка PDF «3 шага к устойчивости» — NB System" loading="lazy" width="1280" height="720">
-</div>
+<div><img src="photo_guide.jpg" alt="Обложка PDF «3 шага к устойчивости»" loading="lazy"></div>
 </div>
 </section>
 
-<!-- ТЕСТ (слойной фон для дыхания) -->
 <section id="test" class="fade2 section-alt">
 <h2>Тест NB — где утекают силы</h2>
 <div class="grid cols-2" style="align-items:center">
-<div><img src="photo_test.jpg" alt="Фрагмент теста NB — 20 вопросов (время, эмоции, контроль)" loading="lazy" width="1280" height="720"></div>
+<div><img src="photo_test.jpg" alt="Фрагмент теста NB" loading="lazy"></div>
 <div>
-<p>Профессиональная ориентировка на основе NB System: 20 вопросов о ритме дня, эмоциях и границах контроля. Помогает понять, где именно перегружается система.</p>
+<p>Профессиональная ориентировка: 20 вопросов о ритме дня, эмоциях и границах контроля. Помогает понять, где именно перегружается система.</p>
 <a href="test.html" class="btn alt" target="_blank" rel="noopener">Пройти тест (2 минуты)</a>
 </div>
 </div>
 </section>
 
-<!-- КОНСУЛЬТАЦИЯ -->
 <section id="consult" class="fade">
 <h2>Консультация «Точка восстановления»</h2>
 <div class="grid cols-2" style="align-items:center">
@@ -196,16 +160,15 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 <ul>
 <li>Индивидуальный план на 2–4 недели</li>
 <li>Запись встречи и рекомендации в PDF</li>
-<li>Спокойный, профессиональный формат</li>
+<li>Спокойный профессиональный формат</li>
 </ul>
 <p class="micro">Ближайшие слоты: ср 19:00 · пт 11:00 · вс 10:00 (МСК)</p>
 <a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn" target="_blank" rel="noopener">Записаться — 9 900 ₽</a>
 </div>
-<div><img src="photo_consult.jpg" alt="Онлайн-консультация NB System — спокойная работа один на один" class="hero-pic" loading="lazy" width="1280" height="720"></div>
+<div><img src="photo_consult.jpg" alt="Онлайн-консультация NB System" class="hero-pic" loading="lazy"></div>
 </div>
 </section>
 
-<!-- FAQ (слойной фон) -->
 <section id="faq" class="fade2 section-alt">
 <h2>Перед тем как начать</h2>
 <div class="card"><strong>Для кого это?</strong> Для женщин, которые слишком долго жили на пределе: работа, семья, ответственность. Нужен порядок, а не мотивация.</div>
@@ -215,7 +178,6 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 <div class="card"><strong>Как записаться?</strong> Нажми «Записаться» и выбери удобное время. Подтверждение и детали придут на почту после оплаты.</div>
 </section>
 
-<!-- ОТЗЫВЫ -->
 <section id="reviews" class="fade">
 <h2>Отзывы</h2>
 <div class="grid" style="grid-template-columns:1fr;gap:14px">
@@ -225,12 +187,10 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 </div>
 </section>
 
-<!-- ОБ АВТОРЕ -->
 <section id="about" class="fade2">
 <h2>Кто я</h2>
 <div class="grid cols-2" style="align-items:center">
-<!-- Рекомендуется один крупный портрет -->
-<div><img src="photo_natalia.jpg" alt="Наталья Бастрыкина — автор NB System" loading="lazy" width="1280" height="720"></div>
+<div><img src="photo_natalia.jpg" alt="Наталья Бастрыкина — автор NB System" loading="lazy"></div>
 <div>
 <p>Я работаю с выгоранием как с перегрузкой системы, а не «чертой характера». 20 лет в Германии научили меня простому: устойчивость — это ритм и границы, а не сила воли.</p>
 <p>Сейчас я помогаю женщинам из России и Европы перестраивать жизнь системно, без надрыва. NB System — профессиональная, спокойная и практическая методика: меньше героизма, больше структуры и уважения к ресурсам.</p>
@@ -238,18 +198,13 @@ padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items
 </div>
 </section>
 
-<footer class="fade">
-NB System © 2025 · Наталья Бастрыкина · Спокойная жизнь как система
-</footer>
+<footer class="fade">NB System © 2025 · Наталья Бастрыкина · Спокойная жизнь как система</footer>
 
-<!-- Липкий бар (моб.) -->
-<div class="sticky-cta" role="region" aria-label="Быстрые действия">
-<div class="brand"><span class="leaf">🌿</span><span>NB System</span></div>
+<div class="sticky-cta"><div class="brand"><span class="leaf">🌿</span><span>NB System</span></div>
 <a href="test.html" class="btn" target="_blank" rel="noopener">Пройти тест</a>
 <a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener">Консультация</a>
 </div>
 
-<!-- schema.org: Service -->
 <script type="application/ld+json">
 {
 "@context":"[https://schema.org",]https://schema.org",
@@ -262,4 +217,4 @@ NB System © 2025 · Наталья Бастрыкина · Спокойная �
 }
 </script>
 </body>
-</html>
+</html
