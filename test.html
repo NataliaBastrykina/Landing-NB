@@ -2,60 +2,125 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Тест NB — где утекают силы</title>
-<meta name="description" content="7 коротких вопросов, чтобы понять, где утекают силы: во времени, эмоциях или контроле. Это не диагностика, а начало порядка.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Тест NB System — где утекают силы</title>
+<meta name="description" content="20 коротких вопросов, чтобы понять, где теряются силы: во времени, эмоциях или контроле. Профессиональная ориентировка NB System.">
+<meta name="theme-color" content="#FAF9F7">
 <style>
-  :root{--bg:#FAF9F7;--ink:#2E2D2B;--muted:#5A5652;--accent:#B59C7B;--line:#EDE9E3;--max:760px;--pad:clamp(16px,4vw,28px)}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.65}
-  header,section,footer{max-width:var(--max);margin:0 auto;padding:clamp(24px,6vw,56px) var(--pad)}
-  h1{margin:.1em 0 .4em;font-size:clamp(24px,4.6vw,34px);font-family:"Cormorant Garamond",serif;line-height:1.2}
-  h2{margin:1em 0 .4em;font-size:clamp(18px,3.2vw,24px);font-family:"Cormorant Garamond",serif;line-height:1.3}
-  p{margin:.6em 0;color:var(--muted)}
-  ol{padding-left:1.2em;margin-top:.3em}
-  li{margin:.35em 0}
-  p + h2{margin-top:0.6em}
-  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:8px;
-       background:var(--accent);color:#fff;text-decoration:none;font-weight:700;min-width:220px;transition:.2s;margin-top:18px}
-  .btn:hover{filter:brightness(.95)}
-  .note{font-size:.92em;color:#777;margin-top:.4em}
-  footer{text-align:center;color:#777;font-size:.9em;padding-bottom:64px}
+:root{
+--bg:#FAF9F7;--ink:#2E2D2B;--muted:#4B4844;--accent:#B59C7B;--line:#EDE9E3;
+--alt:#D8D6D1;--max:920px;--pad:clamp(16px,4vw,28px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.7;letter-spacing:.1px}
+header,section,footer{max-width:var(--max);margin:0 auto;padding:clamp(24px,5vw,52px) var(--pad)}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.2px}
+h1{font-size:clamp(26px,5vw,38px);line-height:1.2;margin:0 0 .35em}
+h2{font-size:clamp(20px,3.6vw,26px);line-height:1.2;margin:1.1em 0 .5em;font-weight:500}
+p{margin:.55em 0;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:8px;
+background:var(--accent);color:#fff;text-decoration:none;font-weight:600;min-width:210px;transition:.2s;box-shadow:0 2px 4px rgba(0,0,0,.05)}
+.btn:hover{filter:brightness(.95)}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(14px,3vw,22px);box-shadow:0 2px 4px rgba(0,0,0,.02);margin:.8em 0}
+.note{font-size:.9em;color:#76716B;margin-top:.4em}
+footer{text-align:center;color:#777;font-size:.9em;padding-bottom:64px}
+fieldset{border:1px solid var(--line);border-radius:12px;background:#fff;padding:clamp(14px,3vw,22px);margin:1em 0}
+legend{font-family:"Cormorant Garamond",serif;font-weight:600;color:var(--ink);padding:0 .2em;font-size:1.1rem}
+.scale{display:flex;justify-content:space-between;font-size:.9em;color:#76716B;margin:.3em 0}
+.q{margin:.8em 0}
+.q strong{display:block;margin-bottom:.3em;color:var(--ink)}
+input[type=range]{width:100%}
+.result{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(16px,3vw,24px);margin-top:1em}
+.section-alt{background:linear-gradient(0deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),#D8D6D1;border-radius:12px}
+@media(max-width:720px){.btn{min-width:auto;width:100%}}
+.fade{opacity:0;transform:translateY(6px);animation:fadein .7s ease .1s forwards}
+@keyframes fadein{to{opacity:1;transform:none}}
 </style>
 </head>
-<body>
 
-<header>
-  <h1>Тест NB — где утекают силы</h1>
-  <p>7 коротких вопросов, чтобы понять, в чём главная перегрузка. Это не психология — это первый шаг к порядку и спокойствию.</p>
+<body>
+<header class="fade">
+<h1>Тест NB System — где утекают силы</h1>
+<p>20 коротких вопросов, чтобы понять, где теряются силы: во времени, эмоциях или контроле.
+Это не диагностика, а профессиональная ориентировка, помогающая увидеть, где перегружена система.</p>
 </header>
 
-<section>
-  <h2>Ответь честно (да / нет)</h2>
-  <ol>
-    <li>День заканчивается, а голова всё ещё «работает»?</li>
-    <li>Когда раздражаешься, чаще молчишь и держишь в себе?</li>
-    <li>Тебе трудно отдыхать, если дела не завершены?</li>
-    <li>Утром часто просыпаешься усталой, даже если спала достаточно?</li>
-    <li>Есть ощущение, что многое держится только на тебе?</li>
-    <li>Есть ли у тебя «ничего-не-должна»-время хотя бы 10 минут в день?</li>
-    <li>Чаще чувствуешь вину за паузу, чем спокойствие за сделанное?</li>
-  </ol>
+<section class="fade">
+<form id="testForm">
+<fieldset>
+<legend>Ответь по шкале от 1 (почти никогда) до 7 (постоянно)</legend>
 
-  <h2>Результат</h2>
-  <p><strong>0–2 «да»</strong> — обычная усталость. Добавь «точку в дне» и короткие паузы.</p>
-  <p><strong>3–5 «да»</strong> — система перегружена. Пора менять ритм и последовательность дел.</p>
-  <p><strong>6–7 «да»</strong> — живёшь на пределе. Начни с простых шагов, чтобы не дойти до срыва.</p>
+<!-- Блок ВРЕМЯ -->
+<div class="q"><strong>1. Утром просыпаешься уставшей.</strong><input type="range" name="q1" min="1" max="7" value="4"></div>
+<div class="q"><strong>2. Часто берёшь больше дел, чем успеваешь.</strong><input type="range" name="q2" min="1" max="7" value="4"></div>
+<div class="q"><strong>3. Вечером не получается завершить день.</strong><input type="range" name="q3" min="1" max="7" value="4"></div>
+<div class="q"><strong>4. Паузы между задачами редки или отсутствуют.</strong><input type="range" name="q4" min="1" max="7" value="4"></div>
+<div class="q"><strong>5. В выходные трудно отдыхать без чувства вины.</strong><input type="range" name="q5" min="1" max="7" value="4"></div>
 
-  <a href="https://boosty.to/YOUR_POST" class="btn" target="_blank" rel="noopener">
-    Скачать гайд «3 шага, чтобы перестать уставать» — 1 900 ₽
-  </a>
-  <p class="note">15 минут — чтобы вернуть порядок. Если пользы не будет за 7 дней — вернём деньги.</p>
+<!-- ЭМОЦИИ -->
+<div class="q"><strong>6. Раздражение стало фоном дня.</strong><input type="range" name="q6" min="1" max="7" value="4"></div>
+<div class="q"><strong>7. Чувствуешь вину, когда отдыхаешь.</strong><input type="range" name="q7" min="1" max="7" value="4"></div>
+<div class="q"><strong>8. Часто сдерживаешь эмоции и молчишь.</strong><input type="range" name="q8" min="1" max="7" value="4"></div>
+<div class="q"><strong>9. Ночью мысли не дают уснуть.</strong><input type="range" name="q9" min="1" max="7" value="4"></div>
+<div class="q"><strong>10. Легко вспыхиваешь из-за мелочей.</strong><input type="range" name="q10" min="1" max="7" value="4"></div>
+
+<!-- КОНТРОЛЬ -->
+<div class="q"><strong>11. Сложно делегировать — проще сделать самой.</strong><input type="range" name="q11" min="1" max="7" value="4"></div>
+<div class="q"><strong>12. Когда что-то идёт не по плану, сразу напрягаешься.</strong><input type="range" name="q12" min="1" max="7" value="4"></div>
+<div class="q"><strong>13. Трудно отдыхать, если кто-то рядом работает.</strong><input type="range" name="q13" min="1" max="7" value="4"></div>
+<div class="q"><strong>14. Чувствуешь, что всё держится на тебе.</strong><input type="range" name="q14" min="1" max="7" value="4"></div>
+<div class="q"><strong>15. Просить о помощи неловко или стыдно.</strong><input type="range" name="q15" min="1" max="7" value="4"></div>
+
+<!-- ОБЩИЕ -->
+<div class="q"><strong>16. Чувство усталости стало нормой.</strong><input type="range" name="q16" min="1" max="7" value="4"></div>
+<div class="q"><strong>17. Энергии хватает только на обязательное.</strong><input type="range" name="q17" min="1" max="7" value="4"></div>
+<div class="q"><strong>18. Радость и интерес стали редкими.</strong><input type="range" name="q18" min="1" max="7" value="4"></div>
+<div class="q"><strong>19. Часто ловишь себя на мысли «я должна держаться».</strong><input type="range" name="q19" min="1" max="7" value="4"></div>
+<div class="q"><strong>20. Даже после сна ощущаешь усталость.</strong><input type="range" name="q20" min="1" max="7" value="4"></div>
+</fieldset>
+
+<button type="button" class="btn" id="calc">Посмотреть результат</button>
+</form>
+
+<div id="result" class="result" hidden>
+<h2>Результат</h2>
+<p id="summary"></p>
+</div>
 </section>
 
-<footer>
-  NB System © 2025 · Наталья Бастрыкина · Жизнь в структуре, а не в изнурении
-</footer>
+<!-- CTA -->
+<section class="fade section-alt">
+<h2>Следующий шаг</h2>
+<p>NB System — система, которая помогает вернуть энергию шаг за шагом.
+Выбери, что подходит тебе сейчас.</p>
+<div class="card">
+<p><strong>Хочешь действовать самостоятельно?</strong></p>
+<a href="https://boosty.to/YOUR_GUIDE_LINK" class="btn" target="_blank" rel="noopener">Купить гайд «3 шага к устойчивости» — 1 900 ₽</a>
+</div>
+<div class="card">
+<p><strong>Нужна персональная поддержка?</strong></p>
+<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener">Записаться на консультацию</a>
+</div>
+</section>
 
+<footer class="fade">NB System © 2025 · Наталья Бастрыкина · Спокойная жизнь как система</footer>
+
+<script>
+document.getElementById('calc').addEventListener('click', ()=>{
+const values=[...document.querySelectorAll('input[type="range"]')].map(i=>+i.value);
+const avg=values.reduce((a,b)=>a+b,0)/values.length;
+let text="";
+if(avg<=2) text="Сбалансированная система. Ты держишь здоровый ритм, продолжай соблюдать границы и не перегружай себя.";
+else if(avg<=3) text="Лёгкое функциональное напряжение. Нужны короткие паузы между делами и осознанные переходы от работы к отдыху.";
+else if(avg<=4) text="Системное напряжение. Организму не хватает завершённости: введи вечернюю «точку дня» и уменьшай количество задач.";
+else if(avg<=5) text="Перегрев. Ты берёшь слишком много ответственности. Делегируй, замедляйся и соблюдай ритм 60 / 5 — 60 минут работы, 5 отдыха.";
+else if(avg<=6) text="Граница истощения. Сила воли держит, но ресурсов уже мало. Нужно снижать нагрузку и восстанавливать сон и питание.";
+else text="Хроническое истощение. Система требует перестройки. Отмени второстепенное и обрати внимание к телу — дыхание, сон, покой.";
+document.getElementById('summary').textContent=text;
+document.getElementById('result').hidden=false;
+document.getElementById('result').scrollIntoView({behavior:'smooth'});
+});
+</script>
 </body>
 </html>
