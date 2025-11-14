@@ -2,222 +2,192 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NB System — спокойная жизнь как система</title>
-<meta name="description" content="NB System — европейская система восстановления от выгорания. Тест NB, гайд «3 шага к устойчивости» и консультация «Точка восстановления». Спокойный, профессиональный подход.">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="NB System — спокойная жизнь как система">
-<meta property="og:description" content="Европейская система восстановления: тест, гайд и консультация. Без лозунгов — только работающая структура.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NB-System — структура вместо мотивации</title>
+<meta name="description" content="NB-System — антимотивационный подход: ясность, границы и устойчивость без глянца и надрыва. Тест, гайд, спринт и консультация.">
+
+<!-- Open Graph (подставишь реальный URL позже) -->
+<meta property="og:title" content="NB-System — успех без цирка">
+<meta property="og:description" content="Антимотивационная инженерия человеческой устойчивости: структура вместо мотивации.">
 <meta property="og:image" content="photo_hero.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#FAF9F7">
-<style>
-:root{
---bg:#FAF9F7;--ink:#2E2D2B;--muted:#4B4844;--accent:#B59C7B;--line:#EDE9E3;
---alt:#D8D6D1;--max:920px;--pad:clamp(16px,4vw,28px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-background:var(--bg);color:var(--ink);
-font-family:"Inter","Helvetica Neue",Arial,sans-serif;
-line-height:1.7;letter-spacing:.1px;
-}
-body::before{
-content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-background:
-radial-gradient(transparent 60%,rgba(0,0,0,.02) 61%) 0 0/300px 300px,
-linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62));
-}
-header,section,footer{max-width:var(--max);margin:0 auto;padding:clamp(24px,5vw,52px) var(--pad)}
-img{max-width:100%;display:block;border-radius:12px}
-h1{
-font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.2px;
-font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0 0 .35em;
-}
-h2{
-font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:.3px;
-font-size:clamp(20px,3.6vw,28px);line-height:1.2;margin:1.1em 0 .5em;
-}
-p{margin:.55em 0;color:var(--muted)}
-ul,ol{margin:.6em 0 .6em 1.2em;color:var(--muted)}
-.grid{display:grid;gap:clamp(16px,3vw,28px)}
-.cols-2{grid-template-columns:1fr}
-@media(min-width:880px){.cols-2{grid-template-columns:1.05fr .95fr;align-items:center}}
+<meta property="og:url" content="https://yourname.github.io/your-repo/">
 
-.btn{
-display:inline-flex;align-items:center;justify-content:center;
-min-height:44px;padding:13px 22px;border-radius:8px;
-background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
-min-width:210px;transition:.2s;box-shadow:0 2px 4px rgba(0,0,0,.05);
-}
-.btn:hover{filter:brightness(.95)}
-.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(14px,3vw,22px);box-shadow:0 2px 4px rgba(0,0,0,.02)}
-.note{font-size:.9em;color:#76716B;margin-top:.4em}
-footer{text-align:center;color:#777;font-size:.9em;padding-bottom:64px}
+<!-- Иконка вкладки -->
+<link rel="icon" type="image/png" href="favicon.png">
 
-/* Верхняя полоса */
-.topbar{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;gap:8px;color:#6f6b66;font-size:.9em}
-.topbar .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
-.separator{max-width:var(--max);margin:0 auto;border-top:1px solid var(--line)}
+<!-- Стили (подключаем внешний файл) -->
+<link rel="stylesheet" href="style.css">
 
-/* Иконки для "опор" (эмодзи) */
-.icon{font-size:1.1em;margin-right:6px}
-
-/* Блоки с альтернативным фоном */
-.section-alt{background:linear-gradient(0deg,rgba(255,255,255,.7),rgba(255,255,255,.7)),var(--alt);border-radius:12px}
-
-/* Цитата */
-.quote{border-left:3px solid var(--accent);padding:12px 14px;border-radius:8px;background:#fff;color:var(--muted);font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.2px}
-
-/* Анимации появления */
-.fade{opacity:0;transform:translateY(6px);animation:fadein .7s ease .1s forwards}
-.fade2{opacity:0;transform:translateY(6px);animation:fadein .7s ease .18s forwards}
-@keyframes fadein{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.fade,.fade2{animation:none!important;opacity:1;transform:none}}
-
-/* Sticky-бар для мобайла */
-@media(max-width:720px){
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
-padding:10px var(--pad);display:flex;gap:10px;justify-content:center;align-items:center;z-index:50}
-.sticky-cta .brand{font-weight:600;color:#6f6b66;margin-right:auto;display:flex;align-items:center;gap:6px}
-.sticky-cta .leaf{font-size:1.1em}
-.sticky-cta .btn{min-width:auto;padding:12px 16px}
-}
-@media(min-width:1024px){.sticky-cta{display:none}}
-
-/* Изображения: только 3 фото, сбалансированы под мобайл/десктоп */
-.hero-pic{
-max-width:94%;height:auto;margin:10px auto 12px;
-object-fit:cover;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.02)
-}
-@media(min-width:880px){.hero-pic{max-width:100%;height:420px;margin:0}}
-@media(max-width:720px){
-/* секционные изображения на шаг компактнее героя */
-#consult .hero-pic,#about .hero-pic{max-width:84%;margin:10px auto 12px}
-.btn{min-width:auto;width:100%}
-}
-</style>
+<!-- Шрифты (можно оставить, а саму типографику зададим в style.css) -->
+<link rel="preconnect" href="[https://fonts.gstatic.com"]https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- топ-строка -->
-<div class="topbar"><span class="dot"></span><span>NB System · Европейская система восстановления</span></div>
-<div class="separator"></div>
+<!-- Верхняя полоса -->
+<div class="topbar" role="banner">
+<span class="dot" aria-hidden="true"></span>
+<span>NB-System · структура вместо мотивации</span>
+</div>
+<div class="separator" aria-hidden="true"></div>
 
 <!-- HERO -->
-<header class="fade">
+<header class="hero wrap" id="home">
 <div class="grid cols-2">
-<div>
-<h1>NB System — вернуть ясность и энергию без надрыва</h1>
-<p>Европейская система восстановления от выгорания. Помогает перестать жить на пределе и выстроить спокойный ритм дня: <strong>время</strong>, <strong>эмоции</strong>, <strong>сила</strong>.</p>
+<div class="hero-copy">
+<h1>NB-System — успех без цирка</h1>
+<p class="lead">
+Мотивация превратилась в новый вид наркотика. Она вспыхивает — и выгорание красиво маскируется.
+NB-System — антимотивационная инженерия человеческой устойчивости: ясность, границы, порядок.
+</p>
 <div class="cta-row">
-<a href="test.html" class="btn" target="_blank" rel="noopener">Пройти тест NB (2 минуты)</a>
-<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener">Записаться на консультацию</a>
+<a class="btn" href="test.html" rel="noopener">Пройти тест NB-System (2 минуты)</a>
+<a class="btn alt" href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">В Telegram — философия и примеры</a>
 </div>
-<p class="note">Начни с теста — 2 минуты, чтобы понять, где утекают силы.</p>
 </div>
-<div>
-<img src="photo_hero.jpg" alt="Наталья Бастрыкина — автор NB System" class="hero-pic" fetchpriority="high" decoding="async">
+<div class="hero-media">
+<img class="hero-pic" src="photo_hero.jpg" alt="NB-System — минималистичный образ спокойствия и структуры" fetchpriority="high" decoding="async">
 </div>
 </div>
 </header>
 
-<!-- ТРИ ОПОРЫ -->
-<section class="fade2">
-<h2>Три опоры устойчивости</h2>
-<div class="grid" style="grid-template-columns:1fr;gap:12px">
-<div class="card"><span class="icon">⏰</span><strong>Время</strong> — день имеет начало и конец. Точки, паузы, два главных дела.</div>
-<div class="card"><span class="icon">🌿</span><strong>Эмоции</strong> — место чувствам без срывов. Замечать, называть, отпускать.</div>
-<div class="card"><span class="icon">⚖️</span><strong>Сила</strong> — ритм вместо героизма. Завершать раньше, чем «на пределе».</div>
+<!-- Позиция -->
+<section class="wrap section" id="position">
+<h2>Я не мотивирую. Я структурирую.</h2>
+<p>
+Я не против успеха, денег и красоты. Я против истерики, в которую их превратили.
+NB-System — система, где реальность не ломает, а выстроена под человека, который в ней живёт.
+</p>
+</section>
+
+<!-- Три опоры -->
+<section class="wrap section" id="pillars">
+<h2>Три опоры NB-System</h2>
+<div class="cards cards-3">
+<div class="card"><span class="icon">⏰</span><strong>Время</strong> — вернуть дню начало и конец. Точка, пауза, два главных смысла.</div>
+<div class="card"><span class="icon">🌿</span><strong>Эмоции</strong> — перестать тонуть в каждой волне. Замечать, называть, отпускать.</div>
+<div class="card"><span class="icon">⚖️</span><strong>Сила</strong> — останавливаться вовремя. Ритм вместо героизма.</div>
 </div>
+<blockquote class="quote">Устойчивость — не отказ, а порядок.</blockquote>
 </section>
 
-<!-- ЦИТАТА -->
-<section class="fade">
-<div class="quote">Ты не обязана быть бесконечной. У тебя есть право быть устойчивой.</div>
-</section>
-
-<!-- ГАЙД (без фото, с кнопкой покупки) -->
-<section id="guide" class="fade section-alt">
-<h2>Гайд «3 шага к устойчивости»</h2>
-<p>Практическое руководство, которое помогает вернуть энергию и ясность без мотивационных лозунгов. Читается за 20 минут, работает сразу.</p>
-<ul>
-<li>Шаг 1 — как вернуть себе день и поставить «точку»</li>
-<li>Шаг 2 — как перестать сдерживать эмоции и снизить раздражение</li>
-<li>Шаг 3 — как останавливаться вовремя и не выгорать снова</li>
-</ul>
-<p class="note">Внутри — трекер на 14 дней и пошаговые инструкции.</p>
-<a href="https://boosty.to/YOUR_GUIDE_LINK" class="btn" target="_blank" rel="noopener">Купить гайд — 1 900 ₽</a>
-</section>
-
-<!-- ТЕСТ -->
-<section id="test" class="fade">
-<h2>Тест NB — где утекают силы</h2>
-<p>20 коротких вопросов, чтобы понять, где перегружается система — во времени, эмоциях или контроле. Это не диагностика, а профессиональная ориентировка.</p>
-<a href="test.html" class="btn alt" target="_blank" rel="noopener">Пройти тест (2 минуты)</a>
-</section>
-
-<!-- КОНСУЛЬТАЦИЯ (с фото) -->
-<section id="consult" class="fade section-alt">
-<h2>Консультация «Точка восстановления»</h2>
+<!-- Тест -->
+<section class="wrap section alt" id="test">
 <div class="grid cols-2">
 <div>
-<p>60 минут в Zoom — персональная работа над твоей системой: где теряются ресурсы и как вернуть ясность без героизма.</p>
-<ul>
-<li>Индивидуальный план на 2–4 недели</li>
-<li>Запись встречи и рекомендации в PDF</li>
-<li>Спокойный, профессиональный формат</li>
-</ul>
-<p class="note">Ближайшие слоты: ср 19:00 · пт 11:00 · вс 10:00 (МСК)</p>
-<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn" target="_blank" rel="noopener">Записаться — 9 900 ₽</a>
+<h2>Тест NB-System — где ломается структура</h2>
+<p>7 коротких вопросов. Без аффирмаций и «как вы себя чувствуете». Результат покажет, где теряются ресурсы: во времени, эмоциях или границах.</p>
+<a class="btn" href="test.html" rel="noopener">Пройти тест (2 минуты)</a>
+<p class="note">Без регистрации. Только результат и рекомендации.</p>
 </div>
-<div><img src="photo_consult.jpg" alt="Онлайн-консультация NB System" class="hero-pic" loading="lazy"></div>
+<div aria-hidden="true"></div>
+</div>
+</section>
+
+<!-- Гайд -->
+<section class="wrap section" id="guide">
+<h2>Гайд «Три шага к устойчивости» — 20 страниц конкретики</h2>
+<p>
+Этот гайд не про «начни сначала». Он про систему, в которой можно жить: Время — вернуть границы; Эмоции — перестать прятать; Сила — не ломать себя ради всех.
+Внутри — объяснение → инструмент → практика и 14-дневный трекер.
+</p>
+<div class="cta-row">
+<a class="btn" href="https://boosty.to/YOUR_GUIDE_LINK" rel="noopener">Скачать гайд — 1 900 ₽</a>
+<a class="btn alt" href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">Обсудить в Telegram</a>
+</div>
+</section>
+
+<!-- Спринт -->
+<section class="wrap section alt" id="sprint">
+<h2>Антимотивация — 14 дней без хаоса</h2>
+<p>
+Не курс и не марафон. Две недели, чтобы перестать жить в режиме «всё срочно». 10–20 минут в день. Без лозунгов. Без глянца.
+После спринта появляется личная система: неделя по приоритетам, уведомления не управляют тобой, появляется тишина вместо шума.
+</p>
+<blockquote class="quote">«Ты не выгорела. Ты просто без структуры.»</blockquote>
+<a class="btn" href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">В Telegram — расписание и регистрация</a>
+<p class="note">10 мест в каждой группе. Следующий старт — в понедельник.</p>
+</section>
+
+<!-- Консультация -->
+<section class="wrap section" id="consult">
+<div class="grid cols-2">
+<div class="consult-media">
+<img class="hero-pic" src="photo_consult.jpg" alt="Онлайн-консультация NB-System: персональная настройка" loading="lazy" decoding="async">
+</div>
+<div>
+<h2>Консультация «Точка восстановления»</h2>
+<p>Персональная настройка системы под твой ритм: 60 минут в Zoom, план на 2–4 недели, запись и рекомендации в PDF. Спокойно, профессионально, по делу.</p>
+<a class="btn" href="https://boosty.to/YOUR_CONSULT_LINK" rel="noopener">Записаться — 9 900 ₽</a>
+<p class="note">Выбираешь удобный слот — получаешь подтверждение и материалы.</p>
+</div>
+</div>
+</section>
+
+<!-- Отзывы -->
+<section class="wrap section" id="reviews">
+<h2>Отзывы</h2>
+<div class="cards cards-3">
+<div class="card">«Вечером впервые была не на взводе. Два смысла и точка в дне. Через 10 дней сон стал глубже.» — Марина, 39</div>
+<div class="card">«Перестала кричать на ребёнка. Научилась просить о помощи и перестала чувствовать вину.» — Анна, 42</div>
+<div class="card">«Поняла, что сила — не в держаться, а в вовремя остановиться. Стало тише и собраннее.» — Ольга, 36</div>
 </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="fade">
-<h2>Перед тем как начать</h2>
-<div class="card"><strong>Для кого это?</strong> Для женщин, которые слишком долго жили на пределе: работа, семья, ответственность. Нужен порядок, а не мотивация.</div>
-<div class="card"><strong>Это терапия?</strong> Нет. NB System — система регуляции дня и эмоций: ритм, границы, простые действия.</div>
-<div class="card"><strong>Сколько времени потребуется?</strong> Тест — 2 минуты. Гайд — 20–25 минут чтения. Первые изменения — через 7–14 дней по трекеру.</div>
-<div class="card"><strong>Что после гайда?</strong> Индивидуальная консультация «Точка восстановления» — 60 минут и персональный план на 2–4 недели.</div>
-<div class="card"><strong>Как записаться?</strong> Нажми «Записаться» и выбери удобное время. Подтверждение и детали придут на почту после оплаты.</div>
-</section>
-
-<!-- ОТЗЫВЫ -->
-<section id="reviews" class="fade">
-<h2>Отзывы</h2>
-<div class="grid" style="grid-template-columns:1fr;gap:14px">
-<div class="card" style="border-left:3px solid var(--accent)">«Вечером впервые была не “на взводе”. Два дела и “точка в дне”. Через 10 дней сон стал глубже.» — Марина, 39</div>
-<div class="card" style="border-left:3px solid var(--accent)">«Снизилось раздражение на домашних: начала проговаривать эмоции и делать 3 паузы по 5 минут. Ушли головные боли.» — Анна, 42</div>
-<div class="card" style="border-left:3px solid var(--accent)">«Стало проще просить о помощи. Перестала перепроверять всё. Меньше конфликтов, больше сил к вечеру.» — Ольга, 36</div>
+<section class="wrap section" id="faq">
+<h2>FAQ</h2>
+<div class="faq">
+<details>
+<summary>Это терапия?</summary>
+<p>Нет. NB-System — антимотивационный подход: не про чувства, а про процессы. При признаках депрессии — к врачу/психотерапевту.</p>
+</details>
+<details>
+<summary>Когда будет результат?</summary>
+<p>Через 7–10 дней появляется ясность, где теряются силы, и первая устойчивость. Дальше — спринт или консультация.</p>
+</details>
+<details>
+<summary>Что дальше после гайда?</summary>
+<p>Спринт «Антимотивация — 14 дней без хаоса» или персональная консультация «Точка восстановления».</p>
+</details>
 </div>
 </section>
 
-<!-- ОБО МНЕ (с фото) -->
-<section id="about" class="fade">
-<h2>Кто я</h2>
+<!-- Обо мне -->
+<section class="wrap section" id="about">
 <div class="grid cols-2">
-<div><img src="photo_natalia.jpg" alt="Наталья Бастрыкина — автор NB System" class="hero-pic" loading="lazy"></div>
 <div>
-<p>Я работаю с выгоранием как с перегрузкой системы, а не «чертой характера». 20 лет в Германии научили меня простому: устойчивость — это ритм и границы, а не сила воли.</p>
-<p>Сейчас я помогаю женщинам из России и Европы перестраивать жизнь системно, без надрыва. NB System — профессиональная, спокойная и практическая методика: меньше героизма, больше структуры и уважения к ресурсам.</p>
+<img class="hero-pic" src="photo_natalia.jpg" alt="Наталья Бастрыкина — автор NB-System" loading="lazy" decoding="async">
+</div>
+<div>
+<h2>Обо мне</h2>
+<p>
+Я не продаю вдохновение. Я возвращаю систему. NB-System — зрелая альтернатива мотивации: порядок без надрыва, результат без истерики продуктивности.
+Здесь не обещают чудес — здесь настраивают жизнь.
+</p>
 </div>
 </div>
 </section>
 
-<footer class="fade">NB System © 2025 · Наталья Бастрыкина · Спокойная жизнь как система</footer>
+<!-- Заключение -->
+<section class="wrap section alt" id="closing">
+<h2>Заключение</h2>
+<p>
+Не нужно всё менять. Нужно перестать метаться. Жизнь рушится не от дел — от хаоса. Собери её в систему.
+NB-System — это инженерия спокойствия.
+</p>
+<blockquote class="quote">Настоящие перемены происходят не когда начинаешь заново, а когда перестаёшь ломать то, что уже есть.</blockquote>
+</section>
 
-<!-- Sticky (моб.) -->
-<div class="sticky-cta" role="region" aria-label="Быстрые действия">
-<div class="brand"><span class="leaf">🌿</span><span>NB System</span></div>
-<a href="test.html" class="btn" target="_blank" rel="noopener">Пройти тест</a>
-<a href="https://boosty.to/YOUR_CONSULT_LINK" class="btn alt" target="_blank" rel="noopener">Консультация</a>
+<!-- Футер -->
+<footer class="foot">
+<div class="wrap foot-grid">
+<div>NB-System · структура вместо мотивации</div>
+<nav class="foot-nav" aria-label="Footer">
+<a href="test.html">Тест</a>
+<a href="https://boosty.to/YOUR_GUIDE_LINK" rel="noopener">Гайд</a>
+<a href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">Telegram</a>
+</nav>
 </div>
-
-</body>
-</html>
