@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей</title>
-  <meta name="description" content="Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей. Помогаю выстраивать следующий карьерный шаг осмысленно, усиливать позицию на рынке и двигаться в России, Европе и Дубае стратегически, а не хаотично.">
+  <title>Бастрыкина Наталья · Карьерная стратегия</title>
+  <meta name="description" content="Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей. Россия, Европа, Дубай.">
 
-  <meta property="og:title" content="Бастрыкина Наталья. Карьерная стратегия">
-  <meta property="og:description" content="Карьерная стратегия для middle, senior специалистов и руководителей. Следующий карьерный шаг требует не хаотичных действий, а стратегии, понимания рынка и сильного позиционирования.">
+  <meta property="og:title" content="Бастрыкина Наталья · Карьерная стратегия">
+  <meta property="og:description" content="Карьера начинается со стратегии. Для middle, senior специалистов и руководителей.">
   <meta property="og:image" content="photo_hero.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourname.github.io/your-repo/">
@@ -18,12 +18,13 @@
 
   <style>
     :root {
-      --bg: #f5f1ea;
-      --surface: rgba(255,255,255,0.88);
+      --bg: #f6f2eb;
+      --surface: rgba(255,255,255,0.94);
       --surface-solid: #ffffff;
       --text: #151515;
-      --muted: #6b6b6b;
-      --line: rgba(21,21,21,0.10);
+      --muted: #7a7a7a;
+      --line: rgba(21,21,21,0.08);
+      --line-strong: rgba(21,21,21,0.14);
       --accent: #173c86;
       --accent-dark: #12306c;
       --accent-soft: rgba(23,60,134,0.08);
@@ -32,9 +33,10 @@
       --shadow-md: 0 10px 24px rgba(0,0,0,0.04);
       --radius-xl: 34px;
       --radius-lg: 26px;
+      --radius-md: 18px;
       --max: 1220px;
-      --content: 700px;
-      --measure: 35ch;
+      --content: 740px;
+      --measure: 36ch;
     }
 
     * {
@@ -50,9 +52,9 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(23,60,134,0.06), transparent 28%),
-        linear-gradient(180deg, #f8f4ee 0%, var(--bg) 100%);
-      line-height: 1.62;
+        radial-gradient(circle at top left, rgba(23,60,134,0.05), transparent 30%),
+        linear-gradient(180deg, #faf6f0 0%, var(--bg) 100%);
+      line-height: 1.64;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -79,30 +81,15 @@
     }
 
     .topbar {
-      min-height: 56px;
+      min-height: 46px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .topbar-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      flex: 0 0 auto;
+      letter-spacing: 0.03em;
+      opacity: 0.8;
     }
 
     .separator {
@@ -117,10 +104,10 @@
     }
 
     h1 {
-      font-size: clamp(28px, 3vw, 42px);
+      font-size: clamp(29px, 3vw, 41px);
       line-height: 1.14;
-      max-width: 14ch;
-      margin-bottom: 16px;
+      max-width: 15ch;
+      margin-bottom: 18px;
     }
 
     h2 {
@@ -141,48 +128,48 @@
     }
 
     .hero {
-      padding: 28px 0 54px;
+      padding: 34px 0 60px;
     }
 
     .hero-shell {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
-      gap: 24px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
       align-items: stretch;
     }
 
     .hero-copy {
-      min-height: 690px;
+      min-height: 710px;
       border-radius: var(--radius-xl);
-      padding: 54px 50px;
+      padding: 62px 56px;
       background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.05);
       box-shadow: var(--shadow-xl);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      width: fit-content;
-      align-items: center;
-      gap: 8px;
-      min-height: 36px;
-      padding: 0 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.92);
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
+    .hero-brand {
+      margin-bottom: 26px;
     }
 
-    .hero-person {
+    .hero-name {
+      font-family: "Manrope", "Inter", sans-serif;
+      font-size: clamp(27px, 2.2vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin: 0 0 8px;
+    }
+
+    .hero-slogan {
+      font-size: clamp(16px, 1.2vw, 18px);
+      line-height: 1.58;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .hero-role {
       font-size: 13px;
       line-height: 1.6;
       color: var(--muted);
@@ -198,16 +185,16 @@
     .hero-lead {
       max-width: var(--measure);
       color: var(--muted);
-      font-size: clamp(16px, 1.25vw, 18px);
-      line-height: 1.74;
-      margin-bottom: 26px;
+      font-size: clamp(16px, 1.18vw, 18px);
+      line-height: 1.78;
+      margin-bottom: 28px;
     }
 
     .hero-note {
-      max-width: 38ch;
+      max-width: 40ch;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.58;
+      line-height: 1.6;
     }
 
     .cta-row {
@@ -221,7 +208,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 48px;
       padding: 0 22px;
       border-radius: 999px;
       font-size: 15px;
@@ -245,13 +232,13 @@
     }
 
     .btn-secondary {
-      border: 1px solid var(--line);
+      border: 1px solid rgba(0,0,0,0.08);
       background: rgba(255,255,255,0.92);
       color: var(--text);
     }
 
     .hero-media {
-      min-height: 690px;
+      min-height: 710px;
       display: grid;
       grid-template-rows: 1fr auto;
       gap: 18px;
@@ -268,13 +255,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
 
     .hero-tag {
       padding: 18px 20px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(21,21,21,0.08);
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(0,0,0,0.05);
       box-shadow: var(--shadow-md);
     }
 
@@ -288,23 +276,23 @@
       display: block;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.5;
+      line-height: 1.52;
     }
 
     .section {
-      padding: 42px 0;
+      padding: 60px 0;
     }
 
     .section-head {
       max-width: var(--content);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .section-intro {
       max-width: 42ch;
       color: var(--muted);
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .split-2,
@@ -330,8 +318,8 @@
     .about-copy,
     .service,
     .faq details {
-      background: rgba(255,255,255,0.84);
-      border: 1px solid rgba(255,255,255,0.94);
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(0,0,0,0.05);
       box-shadow: var(--shadow-md);
       border-radius: var(--radius-lg);
     }
@@ -346,7 +334,7 @@
     .service p,
     .faq details p {
       color: var(--muted);
-      line-height: 1.68;
+      line-height: 1.7;
     }
 
     .list {
@@ -378,7 +366,7 @@
       background: #151515;
       color: #fff;
       border-radius: var(--radius-xl);
-      padding: 56px 36px;
+      padding: 58px 36px;
       box-shadow: var(--shadow-xl);
     }
 
@@ -421,6 +409,15 @@
       justify-content: center;
     }
 
+    .section-label {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
     .numbered {
       display: grid;
       gap: 18px;
@@ -433,7 +430,7 @@
       gap: 14px;
       align-items: start;
       padding-top: 14px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
 
     .numbered-item:first-child {
@@ -483,7 +480,7 @@
       align-items: start;
       margin-bottom: 16px;
       padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
     }
 
     .service-id {
@@ -533,14 +530,14 @@
     }
 
     .final {
-      padding: 12px 0 52px;
+      padding: 14px 0 54px;
     }
 
     .final-box {
       background: linear-gradient(180deg, #1a1a1a 0%, #101010 100%);
       color: #fff;
       border-radius: 34px;
-      padding: 58px 28px;
+      padding: 60px 28px;
       text-align: center;
       box-shadow: var(--shadow-xl);
     }
@@ -570,7 +567,7 @@
       gap: 14px;
       flex-wrap: wrap;
       padding-top: 16px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
 
     @media (max-width: 1120px) {
@@ -592,10 +589,6 @@
       .editorial-image {
         min-height: unset;
       }
-
-      h1 {
-        max-width: 15ch;
-      }
     }
 
     @media (max-width: 720px) {
@@ -604,8 +597,8 @@
       }
 
       .topbar {
-        min-height: 48px;
-        font-size: 11px;
+        min-height: 42px;
+        font-size: 12px;
       }
 
       .hero {
@@ -613,7 +606,7 @@
       }
 
       .section {
-        padding: 24px 0;
+        padding: 28px 0;
       }
 
       h1 {
@@ -665,6 +658,10 @@
         font-size: 16px;
       }
 
+      .hero-name {
+        font-size: 28px;
+      }
+
       .cta-row {
         flex-direction: column;
       }
@@ -696,10 +693,7 @@
 <body>
 
   <div class="wrap topbar" role="banner">
-    <div class="topbar-left">
-      <span class="dot" aria-hidden="true"></span>
-      <span>Бастрыкина Наталья</span>
-    </div>
+    <span>Карьерный стратег</span>
     <span>Россия · Европа · Дубай</span>
   </div>
   <div class="separator" aria-hidden="true"></div>
@@ -707,11 +701,13 @@
   <header class="hero wrap" id="home">
     <div class="hero-shell">
       <div class="hero-copy">
-        <div class="eyebrow">Карьерная стратегия вместо хаотичного роста</div>
 
-        <p class="hero-person">
-          Карьерный стратег
-        </p>
+        <div class="hero-brand">
+          <p class="hero-name">Бастрыкина Наталья</p>
+          <p class="hero-slogan">Карьера начинается со стратегии</p>
+        </div>
+
+        <p class="hero-role">Карьерный стратег</p>
 
         <h1 class="hero-title">
           <span class="line">Для middle, senior</span>
@@ -721,8 +717,9 @@
 
         <p class="hero-lead">
           Не поиск работы, а карьерная стратегия следующего уровня.
-          Помогаю выстраивать следующий карьерный шаг так, чтобы он усиливал
-          вашу позицию, доход и возможности на рынках России, Европы и Дубая.
+          Следующий карьерный шаг либо усиливает позицию, доход и масштаб,
+          либо фиксирует текущий уровень. Работаю с переходами, которые
+          строятся осмысленно и стратегически, а не хаотично.
         </p>
 
         <div class="cta-row">
@@ -731,7 +728,7 @@
         </div>
 
         <div class="hero-note">
-          Без хаотичных переходов, бессистемных решений и шагов, которые не усиливают вашу позицию на рынке.
+          Россия, Европа, Дубай. Без хаотичных переходов, бессистемных решений и шагов, которые не усиливают вашу позицию.
         </div>
       </div>
 
@@ -741,8 +738,8 @@
         </div>
 
         <div class="hero-tag">
-          <strong>Следующий уровень берут стратегически</strong>
-          <span>Моя задача не “помочь с поиском”, а собрать для вас сильную карьерную логику следующего перехода в России, Европе и Дубае.</span>
+          <strong>Следующий уровень выстраивают</strong>
+          <span>Здесь не сопровождается поиск. Здесь собирается логика перехода, которая работает на ваш следующий уровень.</span>
         </div>
       </div>
     </div>
@@ -752,7 +749,7 @@
     <div class="section-head">
       <h2>Вы уже в игре. Но следующий шаг не берут случайно.</h2>
       <p class="section-intro">
-        На уровнях middle, senior и управления вопрос редко в том, чтобы просто двигаться дальше. Вопрос в том, чтобы двигаться в правильную сторону, в правильной роли и с усилением своей позиции.
+        На уровнях middle, senior и управления вопрос редко в том, чтобы просто двигаться дальше. Вопрос в том, чтобы двигаться в правильную сторону, в правильной роли и с усилением своей позиции на рынке.
       </p>
     </div>
 
@@ -773,8 +770,8 @@
         <ul class="list">
           <li>следующий шаг строится без ясной стратегии</li>
           <li>рынок считывается поверхностно, а не системно</li>
-          <li>человек действует как хороший исполнитель, а не как игрок</li>
           <li>карьерный рост не собран как единая траектория</li>
+          <li>человек действует как хороший исполнитель, а не как игрок</li>
           <li>уровень специалиста выше, чем его текущая рыночная подача</li>
         </ul>
       </div>
@@ -820,10 +817,10 @@
       </div>
 
       <div class="editorial-copy">
-        <div class="eyebrow">Подход</div>
-        <h2>Я не сопровождаю хаотичный поиск. Я собираю карьерную стратегию следующего уровня.</h2>
+        <div class="section-label">Подход</div>
+        <h2>Здесь не сопровождается хаотичный поиск. Здесь собирается стратегия следующего уровня.</h2>
         <p class="section-intro" style="max-width:42ch;">
-          Я смотрю на карьеру не как на цепочку отдельных решений. Я смотрю на поле, на рынок, на роли игроков, ограничения, возможности и силу следующего хода. Именно это позволяет перейти сильнее, а не просто перейти.
+          Карьерный переход, это не набор действий. Это система решений. Разбирается текущая позиция, анализируется рынок, определяется сильный сценарий, собирается логика следующего шага.
         </p>
 
         <div class="numbered">
@@ -831,7 +828,7 @@
             <div class="num">01</div>
             <div class="num-copy">
               <strong>Разбор текущей позиции</strong>
-              <span>Мы анализируем ваш реальный профессиональный уровень, сильные стороны, достижения и то, как вы сейчас выглядите на рынке.</span>
+              <span>Анализируется ваш реальный профессиональный уровень, сильные стороны, достижения и то, как вы сейчас выглядите на рынке.</span>
             </div>
           </div>
 
@@ -847,7 +844,7 @@
             <div class="num">03</div>
             <div class="num-copy">
               <strong>Сборка стратегии</strong>
-              <span>Определяем сильную карьерную логику, усиливаем позиционирование и выстраиваем следующий шаг так, чтобы он работал в вашу пользу.</span>
+              <span>Определяется сильная карьерная логика, усиливается позиционирование и выстраивается следующий шаг так, чтобы он работал в вашу пользу.</span>
             </div>
           </div>
         </div>
@@ -859,7 +856,7 @@
     <div class="section-head">
       <h2>Что меняется после этой работы</h2>
       <p class="section-intro">
-        Вы уходите не с абстрактным набором советов, а с ясной стратегией карьерного движения, более сильной позицией на рынке и пониманием, какие шаги действительно усиливают вас.
+        Итог, это не абстрактный набор советов. Итог, это ясная стратегия карьерного движения, более сильная позиция на рынке и понимание, какие шаги действительно усиливают вас.
       </p>
     </div>
 
@@ -888,7 +885,7 @@
     <div class="section-head">
       <h2>Форматы работы</h2>
       <p class="section-intro">
-        Формат подбирается под задачу и масштаб перехода. Моя цель не “продать пакет”, а помочь выбрать ту глубину, которая действительно даст вам сильный результат.
+        Формат подбирается под задачу и масштаб перехода. Здесь не продаётся “пакет”. Здесь выбирается глубина работы, которая действительно даст сильный результат.
       </p>
     </div>
 
@@ -898,13 +895,13 @@
           <h3>Стратегическая консультация</h3>
           <span class="service-id">01</span>
         </div>
-        <p>Для тех, кому нужна ясность, сильный внешний взгляд на свою точку и понимание следующего хода.</p>
+        <p>Точный разбор текущей точки и следующего хода. Для тех, кому нужна ясность, сильный внешний взгляд и понимание, куда двигаться дальше.</p>
         <ul class="list">
           <li>разбор текущей карьерной ситуации</li>
           <li>анализ рыночного контекста</li>
           <li>стратегические рекомендации по следующему шагу</li>
         </ul>
-        <div class="service-note">Точка входа, если вам нужен быстрый, точный и сильный стратегический разбор.</div>
+        <div class="service-note">Точка входа, если нужен быстрый и сильный стратегический разбор.</div>
       </article>
 
       <article class="service">
@@ -926,7 +923,7 @@
           <h3>Карьерное сопровождение</h3>
           <span class="service-id">03</span>
         </div>
-        <p>Для тех, кто уже находится в активном переходе и хочет пройти его точнее, спокойнее и с усилением своей позиции.</p>
+        <p>Формат для тех, кто уже находится в активном переходе и хочет пройти его точнее, спокойнее и с усилением своей позиции.</p>
         <ul class="list">
           <li>подготовка к ключевым этапам перехода</li>
           <li>стратегия коммуникации с рынком</li>
@@ -944,16 +941,16 @@
       </div>
 
       <div class="about-copy">
-        <div class="eyebrow">Обо мне</div>
-        <h2>Я работаю на стыке стратегии, рынка и профессионального позиционирования</h2>
+        <div class="section-label">Обо мне</div>
+        <h2>Работа строится на стыке стратегии, рынка и профессионального позиционирования</h2>
         <p class="section-intro" style="max-width:42ch;">
-          Меня зовут Бастрыкина Наталья. Я карьерный стратег. Работаю с middle, senior специалистами и руководителями, которым важно не просто двигаться дальше, а усиливать свою позицию на рынке через сильную карьерную логику и стратегию.
+          Бастрыкина Наталья. Карьерный стратег. Работаю с middle, senior специалистами и руководителями, которым важно не просто двигаться дальше, а усиливать свою позицию на рынке через сильную карьерную логику и стратегию.
         </p>
         <ul class="list">
-          <li>смотрю на карьеру как на систему, а не как на набор отдельных действий</li>
-          <li>работаю с позиционированием, траекторией и силой следующего хода</li>
-          <li>учитываю различия рынков России, Европы и Дубая</li>
-          <li>помогаю собирать не “переход любой ценой”, а переход, который усиливает вас</li>
+          <li>карьера рассматривается как система, а не как набор отдельных действий</li>
+          <li>работа строится с позиционированием, траекторией и силой следующего хода</li>
+          <li>учитываются различия рынков России, Европы и Дубая</li>
+          <li>собирается не “переход любой ценой”, а переход, который усиливает вас</li>
         </ul>
       </div>
     </div>
@@ -985,7 +982,7 @@
 
       <details>
         <summary>С чего лучше начать?</summary>
-        <p>Лучше всего начать со стратегической консультации. Она помогает увидеть картину целиком, убрать хаос и понять, какой формат работы действительно нужен именно вам.</p>
+        <p>Логично начинать со стратегической консультации. Она даёт картину целиком, убирает хаос и показывает, какой формат работы действительно нужен именно вам.</p>
       </details>
     </div>
   </section>
@@ -994,7 +991,7 @@
     <div class="final-box">
       <h2>Когда следующий шаг выстроен стратегически, карьера перестаёт зависеть от случайности</h2>
       <p>
-        Если вам важно не просто двигаться дальше, а усиливать свою роль, доход и профессиональные возможности, значит пора собирать следующий карьерный ход как стратегию.
+        Если важно не просто двигаться дальше, а усиливать свою роль, доход и профессиональные возможности, значит следующий карьерный ход должен собираться как стратегия.
       </p>
       <div class="cta-row" style="justify-content:center; margin-bottom:0;">
         <a class="btn btn-primary" href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">Записаться на консультацию</a>
