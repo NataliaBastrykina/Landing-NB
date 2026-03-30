@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Карьерный стратег. Карьерная стратегия для специалистов уровня middle, senior и руководителей</title>
-  <meta name="description" content="Карьерная стратегия для специалистов уровня middle, senior и руководителей. Помогаю выстраивать следующий карьерный шаг осмысленно, усиливать позицию на рынке и двигаться в России и Европе стратегически, а не хаотично.">
+  <title>Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей</title>
+  <meta name="description" content="Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей. Помогаю выстраивать следующий карьерный шаг осмысленно, усиливать позицию на рынке и двигаться в России, Европе и Дубае стратегически, а не хаотично.">
 
-  <meta property="og:title" content="Карьерная стратегия для специалистов уровня middle, senior и руководителей">
-  <meta property="og:description" content="Следующий карьерный шаг требует не хаотичных действий, а стратегии, понимания рынка и сильного позиционирования.">
+  <meta property="og:title" content="Бастрыкина Наталья. Карьерная стратегия">
+  <meta property="og:description" content="Карьерная стратегия для middle, senior специалистов и руководителей. Следующий карьерный шаг требует не хаотичных действий, а стратегии, понимания рынка и сильного позиционирования.">
   <meta property="og:image" content="photo_hero.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourname.github.io/your-repo/">
@@ -19,7 +19,6 @@
   <style>
     :root {
       --bg: #f5f1ea;
-      --paper: #fbf8f3;
       --surface: rgba(255,255,255,0.88);
       --surface-solid: #ffffff;
       --text: #151515;
@@ -33,9 +32,9 @@
       --shadow-md: 0 10px 24px rgba(0,0,0,0.04);
       --radius-xl: 34px;
       --radius-lg: 26px;
-      --radius-md: 18px;
       --max: 1220px;
       --content: 700px;
+      --measure: 35ch;
     }
 
     * {
@@ -53,7 +52,7 @@
       background:
         radial-gradient(circle at top left, rgba(23,60,134,0.06), transparent 28%),
         linear-gradient(180deg, #f8f4ee 0%, var(--bg) 100%);
-      line-height: 1.6;
+      line-height: 1.62;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -66,6 +65,12 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    p, li, summary, span {
+      overflow-wrap: break-word;
+      hyphens: auto;
+      text-wrap: pretty;
     }
 
     .wrap {
@@ -106,32 +111,32 @@
     h1, h2, h3 {
       margin: 0;
       font-family: "Manrope", "Inter", sans-serif;
-      letter-spacing: -0.035em;
-      line-height: 1.14;
+      letter-spacing: -0.03em;
       text-wrap: balance;
     }
 
     h1 {
-      font-size: clamp(34px, 4vw, 54px);
-      max-width: 15ch;
-      margin-bottom: 18px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.14;
+      max-width: 14ch;
+      margin-bottom: 16px;
     }
 
     h2 {
-      font-size: clamp(26px, 2.9vw, 38px);
+      font-size: clamp(24px, 2.7vw, 36px);
+      line-height: 1.16;
       max-width: 18ch;
       margin-bottom: 14px;
     }
 
     h3 {
-      font-size: clamp(20px, 1.8vw, 24px);
+      font-size: clamp(19px, 1.8vw, 23px);
       line-height: 1.22;
       margin-bottom: 10px;
     }
 
     p {
       margin: 0;
-      text-wrap: pretty;
     }
 
     .hero {
@@ -140,15 +145,15 @@
 
     .hero-shell {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.04fr 0.96fr;
       gap: 24px;
       align-items: stretch;
     }
 
     .hero-copy {
-      min-height: 700px;
+      min-height: 690px;
       border-radius: var(--radius-xl);
-      padding: 60px 58px;
+      padding: 54px 50px;
       background: var(--surface);
       border: 1px solid rgba(255,255,255,0.94);
       box-shadow: var(--shadow-xl);
@@ -173,22 +178,33 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
+    }
+
+    .hero-person {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-title .line {
+      display: block;
     }
 
     .hero-lead {
-      max-width: 39ch;
+      max-width: var(--measure);
       color: var(--muted);
-      font-size: clamp(17px, 1.45vw, 20px);
-      line-height: 1.68;
-      margin-bottom: 28px;
+      font-size: clamp(16px, 1.25vw, 18px);
+      line-height: 1.74;
+      margin-bottom: 26px;
     }
 
     .hero-note {
-      max-width: 42ch;
+      max-width: 38ch;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.58;
     }
 
     .cta-row {
@@ -202,7 +218,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
+      min-height: 52px;
       padding: 0 22px;
       border-radius: 999px;
       font-size: 15px;
@@ -232,7 +248,7 @@
     }
 
     .hero-media {
-      min-height: 700px;
+      min-height: 690px;
       display: grid;
       grid-template-rows: 1fr auto;
       gap: 18px;
@@ -273,7 +289,7 @@
     }
 
     .section {
-      padding: 40px 0;
+      padding: 42px 0;
     }
 
     .section-head {
@@ -285,7 +301,7 @@
       max-width: 42ch;
       color: var(--muted);
       font-size: 17px;
-      line-height: 1.68;
+      line-height: 1.7;
     }
 
     .split-2,
@@ -327,7 +343,7 @@
     .service p,
     .faq details p {
       color: var(--muted);
-      line-height: 1.66;
+      line-height: 1.68;
     }
 
     .list {
@@ -341,7 +357,6 @@
     .list li {
       position: relative;
       padding-left: 18px;
-      text-wrap: pretty;
     }
 
     .list li::before {
@@ -360,7 +375,7 @@
       background: #151515;
       color: #fff;
       border-radius: var(--radius-xl);
-      padding: 58px 36px;
+      padding: 56px 36px;
       box-shadow: var(--shadow-xl);
     }
 
@@ -369,9 +384,9 @@
       margin: 0 auto;
       text-align: center;
       font-family: "Manrope", sans-serif;
-      font-size: clamp(24px, 2.7vw, 36px);
+      font-size: clamp(24px, 2.6vw, 35px);
       line-height: 1.18;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
       text-wrap: balance;
     }
 
@@ -397,7 +412,7 @@
 
     .editorial-copy,
     .about-copy {
-      padding: 42px 40px;
+      padding: 40px 38px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -446,8 +461,7 @@
     .num-copy span {
       display: block;
       color: var(--muted);
-      line-height: 1.62;
-      text-wrap: pretty;
+      line-height: 1.64;
     }
 
     .services {
@@ -483,7 +497,6 @@
       font-weight: 600;
       color: var(--text);
       line-height: 1.44;
-      text-wrap: pretty;
     }
 
     .results-wrap {
@@ -524,7 +537,7 @@
       background: linear-gradient(180deg, #1a1a1a 0%, #101010 100%);
       color: #fff;
       border-radius: 34px;
-      padding: 60px 28px;
+      padding: 58px 28px;
       text-align: center;
       box-shadow: var(--shadow-xl);
     }
@@ -578,7 +591,7 @@
       }
 
       h1 {
-        max-width: 16ch;
+        max-width: 15ch;
       }
     }
 
@@ -601,19 +614,19 @@
       }
 
       h1 {
-        font-size: 34px;
+        font-size: 30px;
         line-height: 1.16;
-        max-width: 17ch;
+        max-width: 15ch;
       }
 
       h2 {
-        font-size: 27px;
+        font-size: 26px;
         line-height: 1.18;
-        max-width: 19ch;
+        max-width: 18ch;
       }
 
       h3 {
-        font-size: 20px;
+        font-size: 19px;
         line-height: 1.22;
       }
 
@@ -667,7 +680,7 @@
       }
 
       .statement-band p {
-        font-size: 26px;
+        font-size: 25px;
         max-width: 16ch;
       }
 
@@ -682,9 +695,9 @@
   <div class="wrap topbar" role="banner">
     <div class="topbar-left">
       <span class="dot" aria-hidden="true"></span>
-      <span>Карьерный стратег</span>
+      <span>Бастрыкина Наталья · Карьерный стратег</span>
     </div>
-    <span>Россия · Европа · Дубаи</span>
+    <span>Россия · Европа · Дубай</span>
   </div>
   <div class="separator" aria-hidden="true"></div>
 
@@ -692,14 +705,29 @@
     <div class="hero-shell">
       <div class="hero-copy">
         <div class="eyebrow">Карьерная стратегия вместо хаотичного роста</div>
-        <h1>Для специалистов уровня middle, senior и руководителей, которым нужен не поиск работы, а карьерная стратегия</h1>
-        <p class="hero-lead">
-          Вы уже в профессиональной игре. У вас есть опыт, уровень и движение. Но следующий карьерный шаг требует не просто усилий, а точного понимания рынка, сильного позиционирования и стратегии, которая усиливает вашу роль, доход и возможности.
+
+        <p class="hero-person">
+          Бастрыкина Наталья · Карьерный стратег<br>
+          Россия · Европа · Дубай
         </p>
+
+        <h1 class="hero-title">
+          <span class="line">Для middle, senior</span>
+          <span class="line">специалистов</span>
+          <span class="line">и руководителей</span>
+        </h1>
+
+        <p class="hero-lead">
+          Не поиск работы, а карьерная стратегия следующего уровня.
+          Помогаю выстраивать следующий карьерный шаг так, чтобы он усиливал
+          вашу позицию, доход и возможности на рынках России, Европы и Дубая.
+        </p>
+
         <div class="cta-row">
           <a class="btn btn-primary" href="https://t.me/YOUR_TELEGRAM_LINK" rel="noopener">Записаться на консультацию</a>
           <a class="btn btn-secondary" href="#services">Посмотреть форматы работы</a>
         </div>
+
         <div class="hero-note">
           Без хаотичных переходов, бессистемных решений и шагов, которые не усиливают вашу позицию на рынке.
         </div>
@@ -707,11 +735,12 @@
 
       <div class="hero-media">
         <div class="hero-photo">
-          <img src="photo_hero.jpg" alt="Карьерный стратег. Консультационная страница для специалистов уровня middle, senior и руководителей">
+          <img src="photo_hero.jpg" alt="Бастрыкина Наталья. Карьерная стратегия для middle, senior специалистов и руководителей">
         </div>
+
         <div class="hero-tag">
           <strong>Следующий уровень берут стратегически</strong>
-          <span>Моя задача не “помочь с поиском”, а собрать для вас сильную карьерную логику следующего перехода в России и Европе.</span>
+          <span>Моя задача не “помочь с поиском”, а собрать для вас сильную карьерную логику следующего перехода в России, Европе и Дубае.</span>
         </div>
       </div>
     </div>
@@ -721,7 +750,7 @@
     <div class="section-head">
       <h2>Вы уже в игре. Но следующий шаг не берут случайно.</h2>
       <p class="section-intro">
-        На уровнях middle, senior и управления проблема редко в том, чтобы просто двигаться дальше. Проблема в том, чтобы двигаться в правильную сторону, в правильной роли и с усилением своей позиции.
+        На уровнях middle, senior и управления вопрос редко в том, чтобы просто двигаться дальше. Вопрос в том, чтобы двигаться в правильную сторону, в правильной роли и с усилением своей позиции.
       </p>
     </div>
 
@@ -767,7 +796,7 @@
     <div class="split-3">
       <div class="box">
         <h3>Позиция</h3>
-        <p>Рынок считывает не только ваш опыт, но и вашу позицию. На каком уровне вы себя подаёте, какую роль занимаете в глазах работодателя и насколько последовательно вы выстроены как профессионал.</p>
+        <p>Рынок считывает не только опыт, но и вашу позицию. На каком уровне вы себя подаёте, какую роль занимаете в глазах работодателя и насколько последовательно вы выстроены как профессионал.</p>
       </div>
 
       <div class="box">
@@ -777,7 +806,7 @@
 
       <div class="box">
         <h3>Контекст</h3>
-        <p>Россия и Европа считывают кандидатов по-разному. Разные рынки, разные правила, разные ожидания. Следующий сильный ход всегда зависит от конкретного поля игры.</p>
+        <p>Россия, Европа и Дубай считывают кандидатов по-разному. Разные рынки, разные правила, разные ожидания. Следующий сильный ход всегда зависит от конкретного поля игры.</p>
       </div>
     </div>
   </section>
@@ -792,7 +821,7 @@
         <div class="eyebrow">Подход</div>
         <h2>Я не сопровождаю хаотичный поиск. Я собираю карьерную стратегию следующего уровня.</h2>
         <p class="section-intro" style="max-width:42ch;">
-          Я смотрю на карьеру не как на цепочку отдельных решений. Я смотрю на поле. На рынок, роли игроков, ограничения, возможности и силу следующего хода. Именно это позволяет перейти сильнее, а не просто перейти.
+          Я смотрю на карьеру не как на цепочку отдельных решений. Я смотрю на поле, на рынок, на роли игроков, ограничения, возможности и силу следующего хода. Именно это позволяет перейти сильнее, а не просто перейти.
         </p>
 
         <div class="numbered">
@@ -857,7 +886,7 @@
     <div class="section-head">
       <h2>Форматы работы</h2>
       <p class="section-intro">
-        Формат подбирается под задачу и масштаб перехода. Моя цель не “продать пакет”, а помочь выбрать ту степень глубины, которая действительно даст вам сильный результат.
+        Формат подбирается под задачу и масштаб перехода. Моя цель не “продать пакет”, а помочь выбрать ту глубину, которая действительно даст вам сильный результат.
       </p>
     </div>
 
@@ -909,19 +938,19 @@
   <section class="section wrap" id="about">
     <div class="photo-section">
       <div class="editorial-image">
-        <img src="photo_natalia.jpg" alt="Карьерный стратег. Фото эксперта">
+        <img src="photo_natalia.jpg" alt="Бастрыкина Наталья. Фото эксперта">
       </div>
 
       <div class="about-copy">
         <div class="eyebrow">Обо мне</div>
         <h2>Я работаю на стыке стратегии, рынка и профессионального позиционирования</h2>
         <p class="section-intro" style="max-width:42ch;">
-          Я карьерный стратег. Работаю со специалистами уровня middle, senior и руководителями, которым важно не просто двигаться дальше, а усиливать свою позицию на рынке через сильную карьерную логику и стратегию.
+          Меня зовут Бастрыкина Наталья. Я карьерный стратег. Работаю с middle, senior специалистами и руководителями, которым важно не просто двигаться дальше, а усиливать свою позицию на рынке через сильную карьерную логику и стратегию.
         </p>
         <ul class="list">
           <li>смотрю на карьеру как на систему, а не как на набор отдельных действий</li>
           <li>работаю с позиционированием, траекторией и силой следующего хода</li>
-          <li>учитываю различия рынков России и Европы</li>
+          <li>учитываю различия рынков России, Европы и Дубая</li>
           <li>помогаю собирать не “переход любой ценой”, а переход, который усиливает вас</li>
         </ul>
       </div>
@@ -943,8 +972,8 @@
       </details>
 
       <details>
-        <summary>Это подходит только тем, кто хочет уехать в Европу?</summary>
-        <p>Нет. Работа строится как под российский рынок, так и под европейский контекст. Всё зависит от вашей цели, уровня и того, где следующий шаг будет для вас сильнее.</p>
+        <summary>Это подходит только тем, кто хочет работать в Европе или Дубае?</summary>
+        <p>Нет. Работа строится как под российский рынок, так и под европейский и дубайский контекст. Всё зависит от вашей цели, уровня и того, где следующий шаг будет для вас сильнее.</p>
       </details>
 
       <details>
@@ -973,8 +1002,8 @@
 
   <footer class="footer wrap">
     <div class="footer-line">
-      <span>© 2026 · Карьерный стратег</span>
-      <span>Россия · Европа · Дубаи</span>
+      <span>© 2026 · Бастрыкина Наталья</span>
+      <span>Россия · Европа · Дубай</span>
     </div>
   </footer>
 
